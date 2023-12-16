@@ -1,0 +1,2 @@
+Glucose,Insulin,BMI,Age,Prediction,Accuracy_SVM,Accuracy_Logistic,ModelUsed
+100.0,50.0,24.89,20,0,0.0,0.0,SVM

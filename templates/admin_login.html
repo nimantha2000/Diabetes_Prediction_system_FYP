@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">  
+</head>
+<body>
+    <header>
+        <h1>Admin Login</h1s>
+    </header><br><br>
+    <div class="login">
+        <center>
+        <form method="post" action="{{ url_for('admin_login') }}">
+            <label for="username">Username:</label><br>
+            <input class="input" type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label><br>
+            <input class="input" type="password" id="password" name="password" required><br><br>
+            <button class="btn" type="submit">Login</button>
+        </center>
+        </form>
+    </div>
+</body>
+</html>

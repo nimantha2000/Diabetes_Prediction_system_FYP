@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Diabetes Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+        
+</head>
+
+<body>
+    <!-- Result -->
+    <div class="results">
+        {% if prediction == 1 %}
+            <h1>Prediction: <span class='danger'>Oops! You have DIABETES.</span></h1>
+        {% elif prediction == 0 %}
+            <h1>Prediction: <span class='safe'>Wow! You DON'T have diabetes.</span></h1>
+        {% endif %}
+        
+        <center>
+        <table class="table table-bordered mt-3">
+            <tr>
+                <td class="data-label">Input Data:</td>
+            </tr>
+            <tr>
+                <td class="data-label">Glucose:</td>
+                <td>{{ glucose }}</td>
+            </tr>
+            <tr>
+                <td class="data-label">Insulin:</td>
+                <td>{{ insulin }}</td>
+            </tr>
+            <tr>
+                <td class="data-label">BMI:</td>
+                <td>{{ bmi }}</td>
+            </tr>
+            <tr>
+                <td class="data-label">Age:</td>
+                <td>{{ age }}</td>
+            </tr>
+        </table>
+      
+
+        <br><br>
+
+        {% if prediction == 1 %}
+            <img class="gif" src="{{ url_for('static', filename='diabetes.webp') }}" alt="Diabetes Image">
+        {% elif prediction == 0 %}
+            <img class="gif1" src="{{ url_for('static', filename='no-diabetes.webp') }}" alt="Not Diabetes Image">
+        {% endif %}
+    </center>
+    </div>
+
+    <button class="ubutton" ><a href="{{ url_for('home') }}">Back to Home</a></button>
+</body>
+</html>

@@ -1,0 +1,7 @@
+Model,Accuracy,Model_Filename,Timestamp
+SVM,0.786,diabetes-prediction-svm-model.pkl,2023-12-12 15:38:14
+Logistic Regression,0.792,diabetes-prediction-logistic-regression-model.pkl,2023-12-12 15:38:14
+SVM,0.786,diabetes-prediction-svm-model.pkl,2023-12-12 15:39:43
+Logistic Regression,0.792,diabetes-prediction-logistic-regression-model.pkl,2023-12-12 15:39:43
+SVM,0.786,diabetes-prediction-svm-model.pkl,2023-12-12 16:04:20
+Logistic Regression,0.792,diabetes-prediction-logistic-regression-model.pkl,2023-12-12 16:04:20

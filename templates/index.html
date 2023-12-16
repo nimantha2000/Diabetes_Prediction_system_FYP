@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction System | FYP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+
+</head>
+<body>
+    <div >
+        <header>
+            <button class="ubutton"><a href="{{ url_for('admin_login') }}">Admin Login</a></button>
+            <center><h1>Diabetes Prediction System</h1></center>
+        </header><br>
+        
+        <center><h2>Diabetes Predictor</h2></center><br>
+        
+        <form action="{{ url_for('predict_diabetes') }}" method="post">
+            <center>
+            <table> 
+                <tr>
+                    <td>
+                        <label for="glucose">Glucose  :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="glucose" name="glucose" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="insulin">Insulin   :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="insulin" name="insulin" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="weight">Weight (kg) :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="weight" name="weight" required>
+                    </td>
+                </tr>
+               
+                <tr>
+                    <td>
+                        <label for="height">Height (cm) :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="height" name="height" required>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="age">Age :</label>
+                    </td>
+                    <td>
+                        <input type="text" id="age" name="age" required>
+                    </td>
+                </tr>
+
+            </table> 
+            </center><br>
+
+            <center><button type="submit" class="btn btn-primary btn-block btn-large">Predict</button> </center>
+        </form>
+      
+    </div>
+</body>
+</html>

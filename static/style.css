@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("1.jpg");
+  background-size: cover;
+}
+
+body2{
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("1.jpg");
+  background-size: cover;
+}
+
+
+header {
+  background-color: #008f8d;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+h1 {
+  font-size: 3em;
+  color:white;
+  -webkit-text-stroke:  #00008f;
+}
+h2 {
+  font-size: 1.5em;
+  color:rgb(246, 240, 240);
+  -webkit-text-stroke: 1px white;
+}
+
+h4 {
+  color:white;
+}
+
+label {
+  font-size: 1 em;
+  color:rgb(243, 237, 237);
+  -webkit-text-stroke: 1px white;
+}
+
+.input {
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  transition: 300ms ease-in-out;
+}
+
+.input:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
+}
+.ubutton {
+  align-items: center;
+  border: none;
+  display: flex;
+  padding: 0.75rem 1.5rem;
+  background-color: #488aec;
+  color: #ffffff;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  gap: 0.75rem;
+  box-shadow: 0 4px 6px -1px #488aec31, 0 2px 4px -1px #488aec17;
+  transition: all .6s ease;
+
+}
+
+.ubutton:hover {
+  box-shadow: 0 10px 15px -3px #488aec4f, 0 4px 6px -2px #488aec17;
+}
+
+.btn {
+ display: inline-block;
+ padding: 0.9rem 1.8rem;
+ font-size: 16px;
+ font-weight: 700;
+ color: white;
+ border: 3px solid rgb(252, 70, 100);
+ cursor: pointer;
+ position: relative;
+ background-color: transparent;
+ text-decoration: none;
+ overflow: hidden;
+ z-index: 1;
+ font-family: inherit;
+}
+
+.btn::before {
+ content: "";
+ position: absolute;
+ left: 0;
+ top: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgb(252, 70, 100);
+ transform: translateX(-100%);
+ transition: all .3s;
+ z-index: -1;
+}
+
+.btn:hover::before {
+ transform: translateX(0);
+}
+
+a {
+  color: white;
+}
+
+.table{
+  color:white;
+  font-size: 1em;
+}
+
