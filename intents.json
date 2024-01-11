@@ -1,0 +1,559 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hello! Welcome to Ceylon Electricity Board's support. How can I assist you?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "See you later",
+        "Goodbye"
+      ],
+      "responses": [
+        "Goodbye! Have a great day!",
+        "Farewell! If you have more questions, feel free to ask.",
+        "Take care and see you next time!",
+        "Goodbye! Don't hesitate to return if you need further assistance."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "Appreciate it"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Glad I could assist!",
+        "No problem! If you have more inquiries, let me know."
+      ]
+    },
+    {
+      "tag": "ceb_intro",
+      "patterns": [
+        "ceb",
+        "what is ceb?",
+        "ceb is",
+        "Tell me about Ceylon Electricity Board",
+        "What is Ceylon Electricity Board?"
+      ],
+      "responses": [
+        "Ceylon Electricity Board (CEB) is the state-owned electricity company in Sri Lanka. It generates, distributes, and supplies electricity to homes and businesses across the country.",
+        "CEB, also known as the national power utility, is responsible for electricity generation, transmission, and distribution in Sri Lanka."
+      ]
+    },
+    {
+      "tag": "ceb_services",
+      "patterns": [
+        "What services does CEB provide?",
+        "Tell me about CEB's services",
+        "What can I do with Ceylon Electricity Board?"
+      ],
+      "responses": [
+        "CEB offers a range of services including electricity supply, billing, new connections, energy efficiency programs, and more.",
+        "CEB's services encompass electricity distribution, metering, customer support, and initiatives to promote energy conservation."
+      ]
+    },
+    {
+      "tag": "ceb_contact",
+      "patterns": [
+        "How can I contact Ceylon Electricity Board?",
+        "Give me CEB's contact information",
+        "How do I reach CEB's customer service?"
+      ],
+      "responses": [
+        "You can contact CEB's customer service at 011 2440316 or dgmp@ceb.lk. Visit our website for more contact details.",
+        "To reach CEB's customer service, you can call us at 011 2440316 or send an email to dgmp@ceb.lk. Additional contact information is available on our official website."
+      ]
+    },
+    {
+      "tag": "ceb_outages_website",
+      "patterns": [
+        "Are there any planned power outages?",
+        "Tell me about current power outages",
+        "Is there a power outage in my area?"
+      ],
+      "responses": [
+        "You can check for current power outages on the [CEB Outage Map](https://cebcare.ceb.lk/Incognito/OutageMap).",
+        "Open Outage Map: /open_outage_map"
+      ]
+    },
+    {
+      "tag": "ceb_import",
+      "patterns": [
+        "What is CEB's electricity import process?"
+      ],
+      "responses": [
+        "CEB imports electricity to meet peak demand and ensure a stable supply. Imports are sourced from neighboring countries.Electricity imports play a crucial role in ensuring a reliable energy supply. They are obtained through agreements with neighboring countries."
+      ]
+    },
+    {
+      "tag": "vision",
+      "patterns": [
+        "what is vision of ceb?",
+        "ceb vision?",
+        "vision"
+      ],
+      "responses": [
+        "Vision of CEB is Enrich Throught Power."
+      ]
+    },
+    {
+      "tag": "mission",
+      "patterns": [
+        "what is mission of ceb?",
+        "mission of ceb?",
+        "mission"
+      ],
+      "responses": [
+        "Mission of CEB is To develop and maintain an efficient,coordinated and economical system of electricity supply to the whole of Sri Lanka,while adhering to our core values,<br>quality<br>service to the nation<br>efficiency and effectiveness<br>safty<br>professionalism<br>sustainability<br>commitment"
+      ]
+    },
+    {
+      "tag": "bill _payment",
+      "patterns": [
+        "how i pay my bill?",
+        "how i pay my electricity bill?",
+        "how i pay my CEB bill?",
+        "pay my bill",
+        "bill",
+        "payment",
+        "bill payment",
+        "payment gateway link"
+      ],
+      "responses": [
+        "you can pay your bill via https://payment.ceb.lk/"
+      ]
+    },
+    {
+      "tag": "instant_Bill",
+      "patterns": [
+        "how can i pay instant bill?",
+        "instant bill?",
+        "instant bill payment"
+      ],
+      "responses": [
+        "you can pay your instant bill via https://payment.ceb.lk/instantpay"
+      ]
+    },
+    {
+      "tag": "piv_payment",
+      "patterns": [
+        "how can i do piv payment?",
+        "piv payment",
+        "piv"
+      ],
+      "responses": [
+        "you can do PIV payment via https://payment.ceb.lk/pivpay"
+      ]
+    },
+    {
+      "tag": "chairman",
+      "patterns": [
+        "who is chairman?",
+        "who is chairman of ceb?",
+        "chairman"
+      ],
+      "responses": [
+        "Chairman of CEB is Mr. N.S. Ilangakoon RWP RSP"
+      ]
+    },
+    {
+      "tag": "Vice_Chairman",
+      "patterns": [
+        "who is Vice Chairman?",
+        "who is Vice Chairman of ceb?",
+        "Vice Chairman"
+      ],
+      "responses": [
+        "Vice Chairman of CEB is Eng. D.K.P.U. Gunathilake."
+      ]
+    },
+    {
+      "tag": "Acting_General_Manager",
+      "patterns": [
+        "who is Acting General Manager?",
+        "who is Acting General Manager of ceb?",
+        "Acting General Manager"
+      ],
+      "responses": [
+        "Acting General Manager of CEB is Eng. (Dr.) Narendra De Silva"
+      ]
+    },
+    {
+      "tag": "Additional_General_Manager",
+      "patterns": [
+        "who is Additional General Manager (Assets Management)?",
+        "who is Additional General Manager (Assets Management)?",
+        "Additional General Manager (Assets Management)"
+      ],
+      "responses": [
+        "Additional General Manager (Assets Management) of CEB is Eng. (Mrs.) S.H. Diddeniya"
+      ]
+    },
+    {
+      "tag": "Additional_General Manager_(Corporate_Strategy)",
+      "patterns": [
+        "who is Additional General Manager (Corporate Strategy)?",
+        "Additional General Manager (Corporate Strategy)"
+      ],
+      "responses": [
+        "Additional General Manager (Corporate Strategy) of CEB is  Eng.G.I.D.H.K. Ranasinghe."
+      ]
+    },
+    {
+      "tag": "Additional_General Manager(Distribution_Division_1)",
+      "patterns": [
+        "who is Additional General Manager (Distribution Division 1)?",
+        "Additional General Manager (Distribution Division 1)",
+        "who is Additional General Manager (Distribution Division 1) of ceb?"
+      ],
+      "responses": [
+        "Additional General Manager (Distribution Division 1)  of CEB is -Eng. S. A. D. A. Peiris."
+      ]
+    },
+    {
+      "tag": "publications",
+      "patterns": [
+        "what are the publications in ceb?",
+        "publications",
+        "how i find publications in ceb?",
+        "publication"
+      ],
+      "responses": [
+        "you can find publication of CEB via  https://www.ceb.lk/publication-media/annual-reports/en."
+      ]
+    },
+    {
+      "tag": "annual_report",
+      "patterns": [
+        "annual report of ceb?",
+        "How to find annual reports in ceb?",
+        "anual reports",
+        "anual report"
+      ],
+      "responses": [
+        "you can find annual reports via https://www.ceb.lk/publication-media/annual-reports/en"
+      ]
+    },
+    {
+      "tag": "History_of_electricity",
+      "patterns": [
+        "History of electricity in sri lanka",
+        "history of electricity"
+      ],
+      "responses": [
+        "You can find History of Electricity in Sri Lanka via https://www.ceb.lk/ceb-history/en"
+      ]
+    },
+    {
+      "tag": "visit_power_plant",
+      "patterns": [
+        "how to visit power plant?",
+        "how i visit power plant?Power plant visit?"
+      ],
+      "responses": [
+        "you can find details via https://www.ceb.lk/visit-power-plant/en how to vist."
+      ]
+    },
+    {
+      "tag": "power_plant_list",
+      "patterns": [
+        "List of power plants",
+        "how can i find power plant list in sri lanka?",
+        "power plants srilanka",
+        "power plant list in sri lanka"
+      ],
+      "responses": [
+        "you can see power plant list via https://www.ceb.lk/power-plants-list/en."
+      ]
+    },
+    {
+      "tag": "Samanala_Complex",
+      "patterns": [
+        "what is Samanala Complex?",
+        "more details about Samanala Complex",
+        "Samanala Complex",
+        "details about Samanala Complex"
+      ],
+      "responses": [
+        "You can find more details about Samanala Complex via https://www.ceb.lk/power-plants-list/en"
+      ]
+    },
+    {
+      "tag": "samanalawewa_power_station",
+      "patterns": [
+        "can i get details about samanalawewa power station?",
+        "samanalawewa power station",
+        "what is samanalawewa power station?"
+      ],
+      "responses": [
+        "You can find more details about samanalawewa power station via https://www.ceb.lk/power-plants-list/en"
+      ]
+    },
+    {
+      "tag": "udawalwa_power_station",
+      "patterns": [
+        "can i get more details about udawalwa power station?",
+        "udawalwa power station"
+      ],
+      "responses": [
+        "You can find more details about Udawalawa Power Station via https://www.ceb.lk/power-plants-list/en"
+      ]
+    },
+    {
+      "tag": "inginiyagala_power_station",
+      "patterns": [
+        "can i get details about inginiyagala power station?",
+        "inginiyagala power station",
+        "what is inginiyagala power station?"
+      ],
+      "responses": [
+        "You can find more details about Inginiyagala Power Station via https://www.ceb.lk/power-plants-list/en"
+      ]
+    },
+    {
+      "tag": "mahawali_complex",
+      "patterns": [
+        "what is mahawali complex?",
+        "can i get details about mahawali complex?",
+        "mahawali complex"
+      ],
+      "responses": [
+        "You can find more details aboutMahawali Complex via https://www.ceb.lk/power-plants-list/en"
+      ]
+    },
+    {
+      "tag": "kothmale_power station",
+      "patterns": [
+        "can i get details about kothmale power station?",
+        "kothmale power station",
+        "what is kothmale power station?"
+      ],
+      "responses": [
+        "You can find more details about kothmale power station via https://www.ceb.lk/power-plants-list/en"
+      ]
+    },
+    {
+      "tag": "bowatenna_power_station",
+      "patterns": [
+        "can i get details about bowatenna power station?",
+        "bowatenna power station",
+        "what is bowatenna power station?"
+      ],
+      "responses": [
+        "You can find more details about bowatenna power station  via https://www.ceb.lk/power-plants-list/en"
+      ]
+    },
+    {
+      "tag": "victoria_power_station",
+      "patterns": [
+        "can i get details about victoria power station?",
+        "victoria power station",
+        "what is victoria power station?"
+      ],
+      "responses": [
+        "You can find more details about victoria power station via https://www.ceb.lk/power-plants-list/en"
+      ]
+    },
+    {
+      "tag": "Thambapavani_wind_power_station",
+      "patterns": [
+        "can i get details about Thambapavani wind power station?",
+        "Thambapavani wind power station",
+        "what is Thambapavani wind power station?"
+      ],
+      "responses": [
+        "You can find more details about Thambapavani wind power station via https://www.ceb.lk/power-plants-list/en"
+      ]
+    },
+    {
+      "tag": "laxapana_complex",
+      "patterns": [
+        "can i get details about laxapana complex?",
+        "laxapana complex",
+        "what is laxapana complex?"
+      ],
+      "responses": [
+        "You can find more details about Laxapana Complex via https://www.ceb.lk/power-plants-list/en"
+      ]
+    },
+    {
+      "tag": "laxapana_power_station",
+      "patterns": [
+        "can we get details about laxapana power station?",
+        "laxapana power station",
+        "what is laxapana power station?"
+      ],
+      "responses": [
+        "You can find more details about Laxapana Power Station via https://www.ceb.lk/power-plants-list/en"
+      ]
+    },
+    {
+      "tag": "wimalasurendra_power_station",
+      "patterns": [
+        "can i get details about wimalasurendra power station?",
+        "wimalasurendra power station",
+        "what is wimalasurendra power station?"
+      ],
+      "responses": [
+        "You can find more details about Wimalasurendra Power Station via https://www.ceb.lk/power-plants-list/en"
+      ]
+    },
+    {
+      "tag": "kalanithissa_power_station",
+      "patterns": [
+        "can i get more details about kalanithissa power station?",
+        "kalanithissa power station",
+        "what is kalanithissa power station?"
+      ],
+      "responses": [
+        "You can find more details about Kalanithissa Power Station via https://www.ceb.lk/power-plants-list/en"
+      ]
+    },
+    {
+      "tag": "Tariff",
+      "patterns": [
+        "tariff",
+        "what are the tariff category?",
+        "can i know about tariff?",
+        "details of tariff?"
+      ],
+      "responses": [
+        "you can find details of Tariff via click on this link https://www.ceb.lk/commercial-tariff/en"
+      ]
+    },
+    {
+      "tag": "Safety",
+      "patterns": [
+        "can i get details about safety against electricity?",
+        "safety against electricity",
+        "Indoor electrical safety",
+        "outdoor electrical safety"
+      ],
+      "responses": [
+        "you can find safety details via clik on this link https://www.ceb.lk/commercial-safety/en"
+      ]
+    },
+    {
+      "tag": "Save_Electricity",
+      "patterns": [
+        "how i save electricity?",
+        "get details about save electricity"
+      ],
+      "responses": [
+        "you can find details about how to save electricity via clicking this link https://www.ceb.lk/save-electricity-commercial/en"
+      ]
+    },
+    {
+      "tag": "Electricity_Bill_Calculator",
+      "patterns": [
+        "how i calculate my electricity bill?",
+        "calculate my electricity bill",
+        "calculate my electricity bill?",
+        "Electricity Bill Calculator"
+      ],
+      "responses": [
+        "you can calculate your Electricity Bill via click on this link https://cebcare.ceb.lk/Incognito/BillCalculator"
+      ]
+    },
+    {
+      "tag": "get_electricity_connection",
+      "patterns": [
+        "how can i get new electricity connection?",
+        "details about get new electricity connection?",
+        "get new electricity connection"
+      ],
+      "responses": [
+        "you can find details about how get an electricity connection via clicking on this link https://www.ceb.lk/get-connection/en"
+      ]
+    },
+    {
+      "tag": "project",
+      "patterns": [
+        "can i get details about ceb projects?",
+        "ceb projects",
+        "trincomalee coal power project",
+        "seethawaka ganga hydropower project",
+        "liquefied natural gas power project",
+        "transmission construction project"
+      ],
+      "responses": [
+        "You can find details about CEB projects via clicking on this link https://www.ceb.lk/ceb-projects/en"
+      ]
+    },
+    {
+      "tag": "International_Standards",
+      "patterns": [
+        "can i get details about international standards in ceb",
+        "international standards",
+        "iso cerification in ceb"
+      ],
+      "responses": [
+        "you can find details about International Standards details about CEB via clicking on this link https://www.ceb.lk/international-standard/en"
+      ]
+    },
+    {
+      "tag": "generation_network",
+      "patterns": [
+        "can i get details about ceb generation network?",
+        "ceb generation network"
+      ],
+      "responses": [
+        "you can find CEB generation network via clicking on this link https://www.ceb.lk/generation-network/en"
+      ]
+    },
+    {
+      "tag": "transmission_network",
+      "patterns": [
+        "can i get details about transmission network in ceb?",
+        "transmission network in ceb",
+        "ceb transmission network"
+      ],
+      "responses": [
+        "You can get details about CEB transmission Network via clicking on this link https://www.ceb.lk/transmission/en"
+      ]
+    },
+    {
+      "tag": "llist_of_power_plants",
+      "patterns": [
+        "can i get list of power plants",
+        "get details about power plants",
+        "power plants details"
+      ],
+      "responses": [
+        "you can find LIST OF POWER STATIONS via clicking this link https://www.ceb.lk/power-plants-list/en"
+      ]
+    },
+    {
+      "tag": "Visit_a_Power_Plant",
+      "patterns": [
+        "How to Visit a Power Plant?",
+        "can i get details about Visit a Power Plant"
+      ],
+      "responses": [
+        "You can get details about HOW TO VISIT A POWER PLANT via clicking this link https://www.ceb.lk/visit-power-plant/en"
+      ]
+    },
+    {
+      "tag": "Finance_Manager",
+      "patterns": [
+        "who is finance maneger of ceb? finance maneger"
+      ],
+      "responses": [
+        "Finance manager of CEB is Mr. T K Liyanage."
+      ]
+    }
+  ]
+}

@@ -9,10 +9,16 @@ import csv
 import subprocess
 import shutil
 import os
+from flask import Flask, render_template, request, jsonify
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+from modules.chat import get_response
+import logging
 
 from modules.calculate_bmi import calculate_bmi
 from modules.save_users_data_in_csv_file import save_to_csv
 from modules.calculate_output_accuracy import calculate_ans_accuracy
+from modules.latest_model_accurecies import get_latest_model_accuracies
 
 
 app = Flask(__name__)
@@ -44,7 +50,7 @@ try:
 except FileNotFoundError:
     with open(csv_filename, 'w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['Weight', 'Height', 'BMI', 'Age', 'Prediction', 'Accuracy_SVM', 'Accuracy_Logistic', 'ModelUsed'])
+        writer.writerow(['Weight', 'Height', 'BMI', 'Age', 'Prediction'])
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -70,30 +76,26 @@ def predict_diabetes():
         # Calculate BMI
         bmi = calculate_bmi(weight, height)
 
-        # Prediction using SVM model
-        svm_data = np.array([[glucose, insulin, bmi, age]])
-        svm_prediction = svm_classifier.predict(svm_data)
-        accuracy_svm = calculate_ans_accuracy(glucose, insulin, bmi, age, svm_classifier)
+        latest_svm_accuracy, latest_logreg_accuracy = get_latest_model_accuracies()
 
-        # Prediction using Logistic Regression model
-        logreg_data = np.array([[glucose, insulin, bmi, age]])
-        logreg_prediction = logreg_classifier.predict(logreg_data)
-        accuracy_logreg = calculate_ans_accuracy(glucose, insulin, bmi, age, logreg_classifier)
-
-        # Determine the model with the higher accuracy
-        if accuracy_svm >= accuracy_logreg:
+        if latest_svm_accuracy >= latest_logreg_accuracy:
+            # Prediction using SVM model
+            svm_data = np.array([[glucose, insulin, bmi, age]])
+            svm_prediction = svm_classifier.predict(svm_data)
             prediction = svm_prediction[0]
             model_used = 'SVM'
-            accuracy_used = accuracy_svm
         else:
+        # Prediction using Logistic Regression model
+            logreg_data = np.array([[glucose, insulin, bmi, age]])
+            logreg_prediction = logreg_classifier.predict(logreg_data)
             prediction = logreg_prediction[0]
             model_used = 'Logistic Regression'
-            accuracy_used = accuracy_logreg
+
 
         # Save data, prediction, accuracy, and model used to CSV file
-        save_to_csv([glucose, insulin, bmi, age, prediction, accuracy_svm, accuracy_logreg, model_used])
+        save_to_csv([glucose, insulin, bmi, age, prediction])
 
-        return render_template('result.html', prediction=prediction, model=model_used, accuracy=accuracy_used,
+        return render_template('result.html', prediction=prediction, model=model_used,
                                weight=weight, height=height, age=age,bmi=bmi,glucose=glucose,insulin=insulin)
 
 
@@ -112,8 +114,6 @@ def admin_login():
 
     return render_template('admin_login.html')
 
-import pandas as pd
-
 @app.route('/admin/dashboard')
 @login_required
 def admin_dashboard():
@@ -125,25 +125,7 @@ def admin_dashboard():
     # Limit the data to the first 10 rows
     limited_data = data[:10]
 
-    # Read data from the model_details.csv file
-    model_details_filename = 'model_details.csv'
-
-    try:
-        # Load the CSV file using pandas
-        df = pd.read_csv(model_details_filename)
-
-        # Filter data for SVM and Logistic Regression models
-        svm_data = df[df['Model'] == 'SVM']
-        logreg_data = df[df['Model'] == 'Logistic Regression']
-
-        # Get the latest accuracies for SVM and Logistic Regression models
-        latest_svm_accuracy = svm_data['Accuracy'].iloc[-1] if not svm_data.empty else 'N/A'
-        latest_logreg_accuracy = logreg_data['Accuracy'].iloc[-1] if not logreg_data.empty else 'N/A'
-
-    except FileNotFoundError:
-        # Handle if the file doesn't exist or any other exception
-        latest_svm_accuracy = 'N/A'
-        latest_logreg_accuracy = 'N/A'
+    latest_svm_accuracy, latest_logreg_accuracy = get_latest_model_accuracies()
 
     return render_template('admin_dashboard.html', data=limited_data, accuracy_svm=latest_svm_accuracy, accuracy_logreg=latest_logreg_accuracy, username=current_user.get_id())
 
@@ -232,5 +214,39 @@ def delete_row(index):
 
     return redirect(url_for('admin_dashboard'))
 
+@app.get("/")
+def index_get():
+    return render_template("base.html")
+
+# Configure rate limiting
+limiter = Limiter(
+    app,
+    default_limits=["5 per minute"],  # Adjust the rate limit as needed
+)
+
+@app.route("/predict", methods=["POST"])
+@limiter.limit("5 per minute")  # Adjust the rate limit as needed
+def predict():
+    try:
+        data = request.json
+        message = data.get("message")
+
+        if not message:
+            return jsonify({"error": "Invalid input"}), 400
+
+        response = get_response(message)
+
+        if response is None:
+            app.logger.error("No response found for input: %s", message)
+            return jsonify({"error": "Internal Server Error"}), 500
+
+        return jsonify({"answer": response})
+
+    except Exception as e:
+        app.logger.exception("An error occurred during request processing: %s", str(e))
+        return jsonify({"error": "Internal Server Error"}), 500
+
+
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(debug=True)
