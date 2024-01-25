@@ -29,7 +29,8 @@ login_manager = LoginManager(app)
 
 # Example: a dictionary to store user information
 users = {
-    'Nimantha': {'password': '1234'},
+    'Nimantha': {'password': os.getenv('USER_NIMANTHA_PASSWORD')},
+    'test': {'password': os.getenv('USER_TEST_PASSWORD')}
 }
 
 # Load the SVM Classifier model
