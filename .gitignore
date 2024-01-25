@@ -1,0 +1,10 @@
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+
+# Ignore Python bytecode files
+__pycache__/
+
+# Ignore virtual environment
+venv/
