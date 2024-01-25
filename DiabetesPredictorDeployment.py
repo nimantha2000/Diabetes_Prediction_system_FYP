@@ -8,7 +8,7 @@ from datetime import datetime
 import os
 
 # Loading the dataset
-df = pd.read_csv('diabetesDataset.csv', usecols=['Glucose', 'Insulin', 'BMI', 'Age', 'Outcome'])
+df = pd.read_csv('datasets\diabetesDataset.csv', usecols=['Glucose', 'Insulin', 'BMI', 'Age', 'Outcome'])
 
 # Model Building for SVM
 X = df.drop(columns='Outcome')
@@ -58,7 +58,7 @@ data = {
 
 model_details_df = pd.DataFrame(data)
 
-model_details_filename = 'model_details.csv'
+model_details_filename = 'datasets\model_details.csv'
 
 # Check if the file exists
 if os.path.exists(model_details_filename):

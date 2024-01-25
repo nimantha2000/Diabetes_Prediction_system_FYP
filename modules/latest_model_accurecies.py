@@ -2,7 +2,7 @@ import pandas as pd
 
 def get_latest_model_accuracies():
     # Read data from the model_details.csv file
-    model_details_filename = 'model_details.csv'
+    model_details_filename = 'datasets\model_details.csv'
     try:
         # Load the CSV file using pandas
         df = pd.read_csv(model_details_filename)

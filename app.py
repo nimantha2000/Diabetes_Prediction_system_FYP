@@ -1,7 +1,7 @@
 # Importing essential libraries
 from flask import flash, Flask, render_template, request, redirect, url_for
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
-from user import User  # Import the User class
+from user import User  
 import pickle
 import pandas as pd
 import numpy as np
@@ -13,16 +13,15 @@ from flask import Flask, render_template, request, jsonify
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from modules.chat import get_response
-import logging
 
 from modules.calculate_bmi import calculate_bmi
 from modules.save_users_data_in_csv_file import save_to_csv
-from modules.calculate_output_accuracy import calculate_ans_accuracy
+#from modules.calculate_output_accuracy import calculate_ans_accuracy
 from modules.latest_model_accurecies import get_latest_model_accuracies
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your_secret_key'
+app.config['SECRET_KEY'] = 'd4d5e6f7g8h9j0k'
 
 # Set up Flask-Login
 login_manager = LoginManager(app)
@@ -42,9 +41,8 @@ logreg_filename = 'diabetes-prediction-logistic-regression-model.pkl'
 logreg_classifier = pickle.load(open(logreg_filename, 'rb'))
 
 # File to store user data
-csv_filename = 'user_data.csv'
+csv_filename = os.path.join('datasets', 'user_data.csv')
 
-# Check if the CSV file exists, if not, create it with headers
 try:
     with open(csv_filename, 'r', newline='') as file:
         pass
@@ -119,7 +117,7 @@ def admin_login():
 @login_required
 def admin_dashboard():
     # Read data from the user_data.csv file
-    with open('user_data.csv', 'r') as file:
+    with open('datasets/user_data.csv', 'r') as file:
         reader = csv.DictReader(file)
         data = list(reader)
 
@@ -176,12 +174,12 @@ def backup_files():
 def append_data():
     try:
         # Read data from user_data.csv (excluding the header row)
-        with open('user_data.csv', 'r') as user_file:
+        with open('datasets/user_data.csv', 'r') as user_file:
             user_reader = csv.reader(user_file)
             user_data = list(user_reader)[1:]
 
         # Append data to diabetesDataset.csv
-        with open('diabetesDataset.csv', 'a', newline='') as dataset_file:
+        with open('datasets\diabetesDataset.csv', 'a', newline='') as dataset_file:
             dataset_writer = csv.writer(dataset_file)
             dataset_writer.writerows(user_data)
 
@@ -197,7 +195,7 @@ def append_data():
 def delete_row(index):
     try:
         # Read data from user_data.csv
-        with open('user_data.csv', 'r') as user_file:
+        with open('datasets/user_data.csv', 'r') as user_file:
             user_reader = csv.reader(user_file)
             user_data = list(user_reader)
 
@@ -205,7 +203,7 @@ def delete_row(index):
         del user_data[index+1]
 
         # Write the modified data back to user_data.csv
-        with open('user_data.csv', 'w', newline='') as user_file:
+        with open('datasets/user_data.csv', 'w', newline='') as user_file:
             user_writer = csv.writer(user_file)
             user_writer.writerows(user_data)
 
