@@ -48,11 +48,11 @@
         {% if prediction == 1 %}
             <img class="gif" src="{{ url_for('static', filename='diabetes.webp') }}" alt="Diabetes Image">
         {% elif prediction == 0 %}
-            <img class="gif1" src="{{ url_for('static', filename='no-diabetes.webp') }}" alt="Not Diabetes Image">
+            <img class="gif1" src="{{ url_for('static', filename='no-diabetes.webp') }}" alt="Not Diabetes Image"><br><br>
         {% endif %}
     </center>
     </div>
 
-    <button class="ubutton" ><a href="{{ url_for('home') }}">Back to Home</a></button>
+    <button class="button" ><a href="{{ url_for('home') }}">Back to Home</a></button>
 </body>
 </html>

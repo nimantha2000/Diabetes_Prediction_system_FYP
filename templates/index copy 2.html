@@ -112,7 +112,8 @@
         <input name="nav" type="radio" class="about-radio" id="about" />
         <div class="page about-page">
           <div class="page-contents">
-            <h1>about<h1>
+            <h1>About</h1>
+            <button class="ubutton"><a href="{{ url_for('admin_login') }}">Admin Login</a></button>
         </div>
         </div>
         <label class="nav" for="about">
@@ -125,20 +126,50 @@
         <input name="nav" type="radio" class="contact-radio" id="contact" />
         <div class="page contact-page">
           <div class="page-contents">
-            <h1>Admin Login</h1>
-            <button class="ubutton"><a href="{{ url_for('admin_login') }}">Admin Login</a></button>
+            <h1>Contact</h1>
+            
+            <p><a href="#">Get in touch</a></p>
           </div>
         </div>
         <label class="nav" for="contact">
           <span>
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-          Admin
+          Contact
             </span>
           
         </label>
       </div>
 
-      
+      <div class="container">
+        <div class="chatbox">
+            <div class="chatbox__support">
+                <div class="chatbox__header">
+                    <div class="chatbox__image--header">
+                        <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png"
+                            alt="image">
+                    </div>
+                    <div class="chatbox__content--header">
+                        <h4 class="chatbox__heading--header">Diabetes Health Assistant </h4>
+                        <p class="chatbox__description--header">Hi. How can I help you?</p>
+                    </div>
+                </div>
+                <div class="chatbox__messages">
+                    <!-- Messages will be displayed here -->
+                </div>
+                <div class="chatbox__footer">
+                    <input type="text" placeholder="Write a message...">
+                    <button class="chatbox__send--footer send__button">Send</button>
+                </div>
+            </div>
+            <div class="chatbox__button">
+                <button ><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
+            </div>
+        </div>
+      </div>
+    <script>
+        $SCRIPT_ROOT = {{ request.script_root | tojson }};
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
 
 
     <footer class="new_footer_area bg_color">
@@ -205,45 +236,14 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-sm-7">
-                        <p class="mb-0 f_400">© SLTC 2024 All rights reserved.</p>
+                        <p class="mb-0 f_400">© cakecounter Inc.. 2019 All rights reserved.</p>
                     </div>
                     <div class="col-lg-6 col-sm-5 text-right">
-                        <p>Made with <i class="icon_heart"></i> in <a href="#" target="_blank">SLTC</a></p>
+                        <p>Made with <i class="icon_heart"></i> in <a href="http://cakecounter.com" target="_blank">CakeCounter</a></p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="container">
-            <div class="chatbox">
-                <div class="chatbox__support">
-                    <div class="chatbox__header">
-                        <div class="chatbox__image--header">
-                            <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png"
-                                alt="image">
-                        </div>
-                        <div class="chatbox__content--header">
-                            <h4 class="chatbox__heading--header">CEB Digital Assistance</h4>
-                            <p class="chatbox__description--header">Hi. How can I help you?</p>
-                        </div>
-                    </div>
-                    <div class="chatbox__messages">
-                        <!-- Messages will be displayed here -->
-                    </div>
-                    <div class="chatbox__footer">
-                        <input type="text" placeholder="Write a message...">
-                        <button class="chatbox__send--footer send__button">Send</button>
-                    </div>
-                </div>
-                <div class="chatbox__button">
-                    <button ><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
-                </div>
-            </div>
-        </div>
-        <script>
-            $SCRIPT_ROOT = {{ request.script_root | tojson }};
-        </script>
-        <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
     </footer>
 </body>
 </html>
