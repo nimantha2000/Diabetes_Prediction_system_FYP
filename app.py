@@ -3,6 +3,7 @@ from flask import flash, Flask, render_template, request, redirect, url_for
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from user import User  
 import pickle
+import requests
 import pandas as pd
 import numpy as np
 import csv
@@ -105,11 +106,24 @@ def admin_login():
         username = request.form['username']
         password = request.form['password']
 
+        recaptcha_response = request.form.get('g-recaptcha-response')
+        secret_key = '6Lc-vmwpAAAAAGWkZH1U0H3MamR52V3Q9rP4zg6g'
+
+        # Verify reCAPTCHA response
+        response = requests.post('https://www.google.com/recaptcha/api/siteverify', 
+                                data={'secret': secret_key, 'response': recaptcha_response})
+
+        data = response.json()
+        if data['success']:
+            user_info = users.get(username)
+            if user_info and user_info['password'] == password:
+                login_user(User(username, user_info['password']))
+                return redirect(url_for('admin_dashboard'))
+        else:
+            # reCAPTCHA verification failed
+            return "reCAPTCHA verification failed"
         # Replace this with your actual authentication logic
-        user_info = users.get(username)
-        if user_info and user_info['password'] == password:
-            login_user(User(username, user_info['password']))
-            return redirect(url_for('admin_dashboard'))
+        
 
     return render_template('admin_login.html')
 
@@ -122,7 +136,7 @@ def admin_dashboard():
         data = list(reader)
 
     # Limit the data to the first 10 rows
-    limited_data = data[:10]
+    limited_data = data[:]
 
     latest_svm_accuracy, latest_logreg_accuracy = get_latest_model_accuracies()
 

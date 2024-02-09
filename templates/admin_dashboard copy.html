@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="static/icon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add any additional styles or scripts here -->
+</head>
+<body >
+
+    <div class="container mt-5">
+        <h2>Hi {{ username }}, Welcome to the Admin Dashboard,</h2>
+        
+        <!-- Add a button for backup -->
+        <a href="{{ url_for('backup_files') }}" class="btn btn-success mt-3" data-toggle="tooltip" data-placement="top" title="Backup .pkl Files">Backup .pkl Files</a>
+
+        <!-- Add a button for appending data -->
+        <a href="{{ url_for('append_data') }}" class="btn btn-primary mt-3" id="appendButton" data-toggle="tooltip" data-placement="top" title="Append Data to diabetesDataset.csv">Append Data to diabetesDataset.csv</a>
+
+        <!-- Button to run DiabetesPredictorDeployment.py -->
+        <a href="{{ url_for('run_deployment') }}" class="btn btn-primary mt-3" data-toggle="tooltip" data-placement="top" title="If Click this update main dataset">Run Diabetes Predictor Deployment</a>
+        <a href="{{ url_for('admin_logout') }}" class="btn btn-danger mt-3">Logout</a>
+        
+        <br>
+        <h2>Model Accuracies</h2>
+    <p>Accuracy of SVM Model: {{ accuracy_svm }}</p>
+    <p>Accuracy of Logistic Regression Model: {{ accuracy_logreg }}</p>
+        <!-- Display user_data.csv data in a table -->
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Glucose</th>
+                    <th>Insulin</th>
+                    <th>BMI</th>
+                    <th>Age</th>
+                    <th>Prediction</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                    <tr>
+                        <td>{{ row['Glucose'] }}</td>
+                        <td>{{ row['Insulin'] }}</td>
+                        <td>{{ row['BMI'] }}</td>
+                        <td>{{ row['Age'] }}</td>
+                        <td>{{ row['Prediction'] }}</td>
+                        <td>
+                            <a href="{{ url_for('delete_row', index=loop.index0) }}" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete this row">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('appendButton').addEventListener('click', function() {
+            alert('Data appended successfully to diabetesDataset.csv.');
+        });
+        // Initialize tooltips
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</body>
+</html>
