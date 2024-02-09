@@ -121,10 +121,8 @@ def admin_login():
                 return redirect(url_for('admin_dashboard'))
         else:
             # reCAPTCHA verification failed
-            return "reCAPTCHA verification failed"
-        # Replace this with your actual authentication logic
+            return render_template('admin_login.html')
         
-
     return render_template('admin_login.html')
 
 @app.route('/admin/dashboard')

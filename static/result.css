@@ -1,0 +1,36 @@
+
+body { 
+	width: 100%;
+	height:100%;
+	font-family: 'Open Sans', sans-serif;
+	/* background-image: url("1.jpg"); */
+	background-size: cover;
+	color: #111010;
+	font-size: 18px;
+	text-align:center;
+	letter-spacing:1.2px;
+}
+
+
+.button {
+    background-color: #45db81; /* Green */
+    border: none;
+    color: rgb(253, 250, 250);
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.button:hover {
+    background-color:#50cc96;
+    color: rgb(253, 250, 250);
+    transition: 0.7s;
+}
+
+.button:focus {
+    outline-color: transparent;
+    outline-style:solid;
+    box-shadow: 0 0 0 4px #84d2a0;
+}

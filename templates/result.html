@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Diabetes Predictor</title>
     <link rel="icon" href="static/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
     
         
 </head>
@@ -48,7 +48,7 @@
         {% if prediction == 1 %}
             <img class="gif" src="{{ url_for('static', filename='diabetes.webp') }}" alt="Diabetes Image">
         {% elif prediction == 0 %}
-            <img class="gif1" src="{{ url_for('static', filename='no-diabetes.webp') }}" alt="Not Diabetes Image"><br><br>
+            <img src="{{ url_for('static', filename='no-diabetes.webp') }}" alt="Not Diabetes Image" width="200" height="200"><br><br>
         {% endif %}
     </center>
     </div>
