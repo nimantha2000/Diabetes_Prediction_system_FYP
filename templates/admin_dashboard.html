@@ -1,73 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="static/icon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Add any additional styles or scripts here -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='adminDashboard.css') }}">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body >
 
-    <div class="container mt-5">
-        <h2>Hi {{ username }}, Welcome to the Admin Dashboard,</h2>
-        
-        <!-- Add a button for backup -->
-        <a href="{{ url_for('backup_files') }}" class="btn btn-success mt-3" data-toggle="tooltip" data-placement="top" title="Backup .pkl Files">Backup .pkl Files</a>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxl-c-plus-plus'></i>
+            <span class="logo_name">Prediction System</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="#" class="active">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-list-ul'></i>
+                    <span class="links_name">User Inputed Data</span>
+                </a>
+            </li>
 
-        <!-- Add a button for appending data -->
-        <a href="{{ url_for('append_data') }}" class="btn btn-primary mt-3" id="appendButton" data-toggle="tooltip" data-placement="top" title="Append Data to diabetesDataset.csv">Append Data to diabetesDataset.csv</a>
+            <li class="log_out">
+                <a href="{{ url_for('admin_logout') }}">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                </a>
+            </li>
+        </ul>
 
-        <!-- Button to run DiabetesPredictorDeployment.py -->
-        <a href="{{ url_for('run_deployment') }}" class="btn btn-primary mt-3" data-toggle="tooltip" data-placement="top" title="If Click this update main dataset">Run Diabetes Predictor Deployment</a>
-        <a href="{{ url_for('admin_logout') }}" class="btn btn-danger mt-3">Logout</a>
-        
-        <br>
-        <h2>Model Accuracies</h2>
-    <p>Accuracy of SVM Model: {{ accuracy_svm }}</p>
-    <p>Accuracy of Logistic Regression Model: {{ accuracy_logreg }}</p>
-        <!-- Display user_data.csv data in a table -->
-        <table class="table table-bordered mt-3">
-            <thead>
-                <tr>
-                    <th>Glucose</th>
-                    <th>Insulin</th>
-                    <th>BMI</th>
-                    <th>Age</th>
-                    <th>Prediction</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for row in data %}
-                    <tr>
-                        <td>{{ row['Glucose'] }}</td>
-                        <td>{{ row['Insulin'] }}</td>
-                        <td>{{ row['BMI'] }}</td>
-                        <td>{{ row['Age'] }}</td>
-                        <td>{{ row['Prediction'] }}</td>
-                        <td>
-                            <a href="{{ url_for('delete_row', index=loop.index0) }}" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Delete this row">Delete</a>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
     </div>
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <i class='bx bx-menu sidebarBtn'></i>
+                <span class="dashboard">Dashboard</span>
+            </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <div class="search-box">
+                <center><b><p>Hi {{ username }}, Welcome to the Admin Dashboard</b></p></center>
+            </div>
+
+            <div class="profile-details">
+                <!-- <img src="#" alt=""> -->
+                <span class="admin_name">User: {{ username }}</span>
+                <i class='bx bx-chevron-down'></i>
+            </div>
+        </nav>
+
+
+        <div class="home-content">
+            <div class="overview-boxes">
+                <div class="box">
+                    <div class="right-side">
+                        <center><div class="box-topic">Accuracy of SVM Model</div></center>
+                        <center><div class="number">{{ accuracy_svm }}</div></center>
+                        <!-- <div class="indicator">
+                        <i class='bx bx-up-arrow-alt'></i>
+                        <span class="text">Up from yesterday</span>
+                        </div> -->
+                    </div>
+                    <!-- <i class='bx bx-cart-alt cart'></i> -->
+                </div>
+
+                <div class="box">
+                    <div class="right-side">
+                        <center><div class="box-topic">Accuracy of Logistic Regression Model</div></center>
+                        <center><div class="number">{{ accuracy_logreg }}</div> </center>
+                        <!-- <div class="indicator">
+                        <i class='bx bx-up-arrow-alt'></i>
+                        <span class="text">Up from yesterday</span>
+                        </div> -->
+                    </div>
+                    <!-- <i class='bx bx-cart-alt cart'></i> -->
+                </div>
+                
+
+            </div>
+
+            <div class="sales-boxes">
+                <div class="recent-sales box">
+                    <div class="title">Control Buttons</div>
+                    <div class="sales-details">
+                        <a href="{{ url_for('backup_files') }}" class="btn btn-success mt-3" data-toggle="tooltip"
+                            data-placement="top" title="Backup .pkl Files">Backup .pkl Files</a> &emsp;
+
+                        <!-- Add a button for appending data -->
+                        <a href="{{ url_for('append_data') }}" class="btn btn-primary mt-3" id="appendButton"
+                            data-toggle="tooltip" data-placement="top" title="Append Data to diabetesDataset.csv">Append
+                            Data to diabetesDataset.csv</a>&emsp;
+
+                        <!-- Button to run DiabetesPredictorDeployment.py -->
+                        <a href="{{ url_for('run_deployment') }}" class="btn btn-primary mt-3" data-toggle="tooltip"
+                            data-placement="top" title="If Click this update main dataset">Run Diabetes Predictor
+                            Deployment</a>
+
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <div class="sales-boxes">
+                <div class="recent-sales box">
+                    <div class="title">User Inputed Data</div>
+                    <div class="sales-details">
+                        <table class="table table-bordered mt-3">
+                            <thead>
+                                <tr>
+                                    <th>Glucose</th>
+                                    <th>Insulin</th>
+                                    <th>BMI</th>
+                                    <th>Age</th>
+                                    <th>Prediction</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in data %}
+                                <tr>
+                                    <td>{{ row['Glucose'] }}</td>
+                                    <td>{{ row['Insulin'] }}</td>
+                                    <td>{{ row['BMI'] }}</td>
+                                    <td>{{ row['Age'] }}</td>
+                                    <td>{{ row['Prediction'] }}</td>
+                                    <td>
+                                        <a href="{{ url_for('delete_row', index=loop.index0) }}"
+                                            class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top"
+                                            title="Delete this row">Delete</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
     <script>
-        document.getElementById('appendButton').addEventListener('click', function() {
-            alert('Data appended successfully to diabetesDataset.csv.');
-        });
-        // Initialize tooltips
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function () {
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
     </script>
+
 </body>
+
 </html>

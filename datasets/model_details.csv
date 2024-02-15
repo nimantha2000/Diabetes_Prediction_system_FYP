@@ -9,3 +9,5 @@ SVM,0.786,diabetes-prediction-svm-model.pkl,2024-01-25 15:19:03
 Logistic Regression,0.792,diabetes-prediction-logistic-regression-model.pkl,2024-01-25 15:19:03
 SVM,0.774,diabetes-prediction-svm-model.pkl,2024-01-25 15:25:46
 Logistic Regression,0.768,diabetes-prediction-logistic-regression-model.pkl,2024-01-25 15:25:46
+SVM,0.816,diabetes-prediction-svm-model.pkl,2024-02-15 16:29:18
+Logistic Regression,0.832,diabetes-prediction-logistic-regression-model.pkl,2024-02-15 16:29:18
