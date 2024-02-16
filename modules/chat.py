@@ -115,7 +115,7 @@ def get_response(msg):
     # If no response was found in intents or cache, log the unanswered question
     log_unanswered_question(msg)
     
-    return "I couldn't find an answer to your question. Please contact the hotline via 1987."
+    return "Sorry, I don't know answer for your quection"
 
 if __name__ == "__main__":
     print("Let's chat! (type 'quit' to exit)")

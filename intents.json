@@ -3,556 +3,158 @@
     {
       "tag": "greeting",
       "patterns": [
-        "Hi",
-        "Hey",
+        "Hi there",
         "Hello",
+        "Hey",
         "Good day"
       ],
       "responses": [
-        "Hello! Welcome to Ceylon Electricity Board's support. How can I assist you?"
+        "Hello! Welcome to our diabetes support. How can I assist you today?"
       ]
     },
     {
       "tag": "goodbye",
       "patterns": [
+        "Goodbye",
         "Bye",
         "See you later",
-        "Goodbye"
+        "Take care"
       ],
       "responses": [
         "Goodbye! Have a great day!",
-        "Farewell! If you have more questions, feel free to ask.",
+        "Farewell! Don't hesitate to return if you have more questions.",
         "Take care and see you next time!",
-        "Goodbye! Don't hesitate to return if you need further assistance."
+        "Goodbye! If you need further assistance, feel free to ask."
       ]
     },
     {
-      "tag": "thanks",
+      "tag": "name",
       "patterns": [
-        "Thanks",
-        "Thank you",
-        "Appreciate it"
+        "what is your name",
+        "what should i call you",
+        "what's your name?",
+        "who are you?",
+        "can you tell me your name"
       ],
       "responses": [
-        "You're welcome!",
-        "Glad I could assist!",
-        "No problem! If you have more inquiries, let me know."
+        "you can call me Medibot!",
+        "i am Medibot!"
       ]
     },
     {
-      "tag": "ceb_intro",
+      "tag": "diabetes",
       "patterns": [
-        "ceb",
-        "what is ceb?",
-        "ceb is",
-        "Tell me about Ceylon Electricity Board",
-        "What is Ceylon Electricity Board?"
+        "What is diabetes?",
+        "What if diabetes?",
+        "diabetes is"
       ],
       "responses": [
-        "Ceylon Electricity Board (CEB) is the state-owned electricity company in Sri Lanka. It generates, distributes, and supplies electricity to homes and businesses across the country.",
-        "CEB, also known as the national power utility, is responsible for electricity generation, transmission, and distribution in Sri Lanka."
+        "Diabetes is a health condition where your body has trouble managing blood sugar levels."
       ]
     },
     {
-      "tag": "ceb_services",
+      "tag": "symptoms",
       "patterns": [
-        "What services does CEB provide?",
-        "Tell me about CEB's services",
-        "What can I do with Ceylon Electricity Board?"
+        "What are the symptoms of diabetes?",
+        "How can I tell if I have diabetes?",
+        "What signs should I look for in diabetes?",
+        "I'm experiencing symptoms like increased thirst and frequent urination."
       ],
       "responses": [
-        "CEB offers a range of services including electricity supply, billing, new connections, energy efficiency programs, and more.",
-        "CEB's services encompass electricity distribution, metering, customer support, and initiatives to promote energy conservation."
+        "Common symptoms of diabetes include increased thirst, frequent urination, unexplained weight loss, fatigue, blurred vision, and slow wound healing. If you're experiencing these symptoms, it's important to consult a healthcare professional.",
+        "Symptoms of diabetes can include increased thirst, frequent urination, fatigue, unexplained weight loss, blurred vision, and slow wound healing. If you suspect you have diabetes, it's important to get tested and seek medical advice."
       ]
     },
     {
-      "tag": "ceb_contact",
+      "tag": "types",
       "patterns": [
-        "How can I contact Ceylon Electricity Board?",
-        "Give me CEB's contact information",
-        "How do I reach CEB's customer service?"
+        "What are the different types of diabetes?",
+        "Can you explain the types of diabetes?",
+        "How many types of diabetes are there?"
       ],
       "responses": [
-        "You can contact CEB's customer service at 011 2440316 or dgmp@ceb.lk. Visit our website for more contact details.",
-        "To reach CEB's customer service, you can call us at 011 2440316 or send an email to dgmp@ceb.lk. Additional contact information is available on our official website."
+        "There are primarily three main types of diabetes: type 1 diabetes, type 2 diabetes, and gestational diabetes. Each type has its own causes, risk factors, and management strategies.",
+        "The main types of diabetes are type 1 diabetes, type 2 diabetes, and gestational diabetes. Type 1 is an autoimmune condition, type 2 is often related to lifestyle factors, and gestational diabetes occurs during pregnancy. Each type requires different management approaches."
       ]
     },
     {
-      "tag": "ceb_outages_website",
+      "tag": "diet",
       "patterns": [
-        "Are there any planned power outages?",
-        "Tell me about current power outages",
-        "Is there a power outage in my area?"
+        "What should I eat if I have diabetes?",
+        "Can you recommend a diabetic-friendly diet?",
+        "What foods should I avoid with diabetes?"
       ],
       "responses": [
-        "You can check for current power outages on the [CEB Outage Map](https://cebcare.ceb.lk/Incognito/OutageMap).",
-        "Open Outage Map: /open_outage_map"
+        "A balanced diet for diabetes includes plenty of vegetables, lean proteins, whole grains, and healthy fats. It's important to limit sugary foods and drinks, refined carbohydrates, and high-fat foods.",
+        "A diabetic-friendly diet focuses on portion control, whole foods, and balanced meals. It's important to monitor carbohydrate intake and choose foods with a low glycemic index."
       ]
     },
     {
-      "tag": "ceb_import",
+      "tag": "risk_factors",
       "patterns": [
-        "What is CEB's electricity import process?"
+        "What are the risk factors for diabetes?",
+        "Am I at risk for diabetes?",
+        "What factors increase the risk of diabetes?"
       ],
       "responses": [
-        "CEB imports electricity to meet peak demand and ensure a stable supply. Imports are sourced from neighboring countries.Electricity imports play a crucial role in ensuring a reliable energy supply. They are obtained through agreements with neighboring countries."
+        "Risk factors for diabetes include family history, overweight or obesity, physical inactivity, unhealthy diet, high blood pressure, high cholesterol levels, and ethnicity. It's important to be aware of these factors and take steps to reduce your risk.",
+        "Factors that increase the risk of diabetes include genetics, lifestyle factors (such as unhealthy diet and lack of exercise), obesity, high blood pressure, and high cholesterol levels. If you have these risk factors, it's important to talk to your doctor about prevention strategies."
       ]
     },
     {
-      "tag": "vision",
+      "tag": "prevention",
       "patterns": [
-        "what is vision of ceb?",
-        "ceb vision?",
-        "vision"
+        "How can I prevent diabetes?",
+        "What are some ways to prevent diabetes?",
+        "Can diabetes be prevented?"
       ],
       "responses": [
-        "Vision of CEB is Enrich Throught Power."
+        "Lifestyle changes are the best way to prevent or delay the onset of type 2 diabetes. This includes reaching and maintaining a healthy body weight, staying physically active with at least 30 minutes of moderate exercise each day, eating a healthy diet low in sugar and saturated fat, and avoiding tobacco use."
       ]
     },
     {
-      "tag": "mission",
+      "tag": "diagnosis",
       "patterns": [
-        "what is mission of ceb?",
-        "mission of ceb?",
-        "mission"
+        "How is diabetes diagnosed?",
+        "What tests are used to diagnose diabetes?",
+        "Can you explain the diagnosis process for diabetes?"
       ],
       "responses": [
-        "Mission of CEB is To develop and maintain an efficient,coordinated and economical system of electricity supply to the whole of Sri Lanka,while adhering to our core values,<br>quality<br>service to the nation<br>efficiency and effectiveness<br>safty<br>professionalism<br>sustainability<br>commitment"
+        "Diabetes can be diagnosed through relatively inexpensive blood glucose testing. Early diagnosis is important to prevent complications. People with type 1 diabetes require insulin injections for survival, while those with type 2 diabetes may need medications along with lifestyle changes to manage their blood sugar levels."
       ]
     },
     {
-      "tag": "bill _payment",
+      "tag": "treatment",
       "patterns": [
-        "how i pay my bill?",
-        "how i pay my electricity bill?",
-        "how i pay my CEB bill?",
-        "pay my bill",
-        "bill",
-        "payment",
-        "bill payment",
-        "payment gateway link"
+        "How is diabetes treated?",
+        "What are the treatment options for diabetes?",
+        "Can diabetes be managed without medication?"
       ],
       "responses": [
-        "you can pay your bill via https://payment.ceb.lk/"
+        "Treatment for diabetes often involves a combination of healthy lifestyle habits, medication, and regular monitoring. People with type 1 diabetes require insulin injections for survival, while those with type 2 diabetes may need medications such as metformin, sulfonylureas, or sodium-glucose co-transporters type 2 inhibitors to help manage their blood sugar levels."
       ]
     },
     {
-      "tag": "instant_Bill",
+      "tag": "complications",
       "patterns": [
-        "how can i pay instant bill?",
-        "instant bill?",
-        "instant bill payment"
+        "What are the complications of diabetes?",
+        "Can diabetes cause complications?",
+        "What problems can diabetes lead to?"
       ],
       "responses": [
-        "you can pay your instant bill via https://payment.ceb.lk/instantpay"
+        "Diabetes can lead to various complications, including heart disease, stroke, kidney disease, nerve damage (neuropathy), eye problems (retinopathy), foot problems, and skin conditions. Proper management and control of blood sugar levels are essential to reduce the risk of complications.",
+        "Complications of diabetes can include heart disease, stroke, kidney disease, nerve damage, eye problems, foot problems, and skin conditions. It's important for people with diabetes to work closely with their healthcare team to prevent and manage these complications."
       ]
     },
     {
-      "tag": "piv_payment",
+      "tag": "family_history",
       "patterns": [
-        "how can i do piv payment?",
-        "piv payment",
-        "piv"
+        "If my father has type 2 diabetes, does that mean that I am more likely to get it also?",
+        "Does diabetes run in families?",
+        "Is diabetes hereditary?"
       ],
       "responses": [
-        "you can do PIV payment via https://payment.ceb.lk/pivpay"
-      ]
-    },
-    {
-      "tag": "chairman",
-      "patterns": [
-        "who is chairman?",
-        "who is chairman of ceb?",
-        "chairman"
-      ],
-      "responses": [
-        "Chairman of CEB is Mr. N.S. Ilangakoon RWP RSP"
-      ]
-    },
-    {
-      "tag": "Vice_Chairman",
-      "patterns": [
-        "who is Vice Chairman?",
-        "who is Vice Chairman of ceb?",
-        "Vice Chairman"
-      ],
-      "responses": [
-        "Vice Chairman of CEB is Eng. D.K.P.U. Gunathilake."
-      ]
-    },
-    {
-      "tag": "Acting_General_Manager",
-      "patterns": [
-        "who is Acting General Manager?",
-        "who is Acting General Manager of ceb?",
-        "Acting General Manager"
-      ],
-      "responses": [
-        "Acting General Manager of CEB is Eng. (Dr.) Narendra De Silva"
-      ]
-    },
-    {
-      "tag": "Additional_General_Manager",
-      "patterns": [
-        "who is Additional General Manager (Assets Management)?",
-        "who is Additional General Manager (Assets Management)?",
-        "Additional General Manager (Assets Management)"
-      ],
-      "responses": [
-        "Additional General Manager (Assets Management) of CEB is Eng. (Mrs.) S.H. Diddeniya"
-      ]
-    },
-    {
-      "tag": "Additional_General Manager_(Corporate_Strategy)",
-      "patterns": [
-        "who is Additional General Manager (Corporate Strategy)?",
-        "Additional General Manager (Corporate Strategy)"
-      ],
-      "responses": [
-        "Additional General Manager (Corporate Strategy) of CEB is  Eng.G.I.D.H.K. Ranasinghe."
-      ]
-    },
-    {
-      "tag": "Additional_General Manager(Distribution_Division_1)",
-      "patterns": [
-        "who is Additional General Manager (Distribution Division 1)?",
-        "Additional General Manager (Distribution Division 1)",
-        "who is Additional General Manager (Distribution Division 1) of ceb?"
-      ],
-      "responses": [
-        "Additional General Manager (Distribution Division 1)  of CEB is -Eng. S. A. D. A. Peiris."
-      ]
-    },
-    {
-      "tag": "publications",
-      "patterns": [
-        "what are the publications in ceb?",
-        "publications",
-        "how i find publications in ceb?",
-        "publication"
-      ],
-      "responses": [
-        "you can find publication of CEB via  https://www.ceb.lk/publication-media/annual-reports/en."
-      ]
-    },
-    {
-      "tag": "annual_report",
-      "patterns": [
-        "annual report of ceb?",
-        "How to find annual reports in ceb?",
-        "anual reports",
-        "anual report"
-      ],
-      "responses": [
-        "you can find annual reports via https://www.ceb.lk/publication-media/annual-reports/en"
-      ]
-    },
-    {
-      "tag": "History_of_electricity",
-      "patterns": [
-        "History of electricity in sri lanka",
-        "history of electricity"
-      ],
-      "responses": [
-        "You can find History of Electricity in Sri Lanka via https://www.ceb.lk/ceb-history/en"
-      ]
-    },
-    {
-      "tag": "visit_power_plant",
-      "patterns": [
-        "how to visit power plant?",
-        "how i visit power plant?Power plant visit?"
-      ],
-      "responses": [
-        "you can find details via https://www.ceb.lk/visit-power-plant/en how to vist."
-      ]
-    },
-    {
-      "tag": "power_plant_list",
-      "patterns": [
-        "List of power plants",
-        "how can i find power plant list in sri lanka?",
-        "power plants srilanka",
-        "power plant list in sri lanka"
-      ],
-      "responses": [
-        "you can see power plant list via https://www.ceb.lk/power-plants-list/en."
-      ]
-    },
-    {
-      "tag": "Samanala_Complex",
-      "patterns": [
-        "what is Samanala Complex?",
-        "more details about Samanala Complex",
-        "Samanala Complex",
-        "details about Samanala Complex"
-      ],
-      "responses": [
-        "You can find more details about Samanala Complex via https://www.ceb.lk/power-plants-list/en"
-      ]
-    },
-    {
-      "tag": "samanalawewa_power_station",
-      "patterns": [
-        "can i get details about samanalawewa power station?",
-        "samanalawewa power station",
-        "what is samanalawewa power station?"
-      ],
-      "responses": [
-        "You can find more details about samanalawewa power station via https://www.ceb.lk/power-plants-list/en"
-      ]
-    },
-    {
-      "tag": "udawalwa_power_station",
-      "patterns": [
-        "can i get more details about udawalwa power station?",
-        "udawalwa power station"
-      ],
-      "responses": [
-        "You can find more details about Udawalawa Power Station via https://www.ceb.lk/power-plants-list/en"
-      ]
-    },
-    {
-      "tag": "inginiyagala_power_station",
-      "patterns": [
-        "can i get details about inginiyagala power station?",
-        "inginiyagala power station",
-        "what is inginiyagala power station?"
-      ],
-      "responses": [
-        "You can find more details about Inginiyagala Power Station via https://www.ceb.lk/power-plants-list/en"
-      ]
-    },
-    {
-      "tag": "mahawali_complex",
-      "patterns": [
-        "what is mahawali complex?",
-        "can i get details about mahawali complex?",
-        "mahawali complex"
-      ],
-      "responses": [
-        "You can find more details aboutMahawali Complex via https://www.ceb.lk/power-plants-list/en"
-      ]
-    },
-    {
-      "tag": "kothmale_power station",
-      "patterns": [
-        "can i get details about kothmale power station?",
-        "kothmale power station",
-        "what is kothmale power station?"
-      ],
-      "responses": [
-        "You can find more details about kothmale power station via https://www.ceb.lk/power-plants-list/en"
-      ]
-    },
-    {
-      "tag": "bowatenna_power_station",
-      "patterns": [
-        "can i get details about bowatenna power station?",
-        "bowatenna power station",
-        "what is bowatenna power station?"
-      ],
-      "responses": [
-        "You can find more details about bowatenna power station  via https://www.ceb.lk/power-plants-list/en"
-      ]
-    },
-    {
-      "tag": "victoria_power_station",
-      "patterns": [
-        "can i get details about victoria power station?",
-        "victoria power station",
-        "what is victoria power station?"
-      ],
-      "responses": [
-        "You can find more details about victoria power station via https://www.ceb.lk/power-plants-list/en"
-      ]
-    },
-    {
-      "tag": "Thambapavani_wind_power_station",
-      "patterns": [
-        "can i get details about Thambapavani wind power station?",
-        "Thambapavani wind power station",
-        "what is Thambapavani wind power station?"
-      ],
-      "responses": [
-        "You can find more details about Thambapavani wind power station via https://www.ceb.lk/power-plants-list/en"
-      ]
-    },
-    {
-      "tag": "laxapana_complex",
-      "patterns": [
-        "can i get details about laxapana complex?",
-        "laxapana complex",
-        "what is laxapana complex?"
-      ],
-      "responses": [
-        "You can find more details about Laxapana Complex via https://www.ceb.lk/power-plants-list/en"
-      ]
-    },
-    {
-      "tag": "laxapana_power_station",
-      "patterns": [
-        "can we get details about laxapana power station?",
-        "laxapana power station",
-        "what is laxapana power station?"
-      ],
-      "responses": [
-        "You can find more details about Laxapana Power Station via https://www.ceb.lk/power-plants-list/en"
-      ]
-    },
-    {
-      "tag": "wimalasurendra_power_station",
-      "patterns": [
-        "can i get details about wimalasurendra power station?",
-        "wimalasurendra power station",
-        "what is wimalasurendra power station?"
-      ],
-      "responses": [
-        "You can find more details about Wimalasurendra Power Station via https://www.ceb.lk/power-plants-list/en"
-      ]
-    },
-    {
-      "tag": "kalanithissa_power_station",
-      "patterns": [
-        "can i get more details about kalanithissa power station?",
-        "kalanithissa power station",
-        "what is kalanithissa power station?"
-      ],
-      "responses": [
-        "You can find more details about Kalanithissa Power Station via https://www.ceb.lk/power-plants-list/en"
-      ]
-    },
-    {
-      "tag": "Tariff",
-      "patterns": [
-        "tariff",
-        "what are the tariff category?",
-        "can i know about tariff?",
-        "details of tariff?"
-      ],
-      "responses": [
-        "you can find details of Tariff via click on this link https://www.ceb.lk/commercial-tariff/en"
-      ]
-    },
-    {
-      "tag": "Safety",
-      "patterns": [
-        "can i get details about safety against electricity?",
-        "safety against electricity",
-        "Indoor electrical safety",
-        "outdoor electrical safety"
-      ],
-      "responses": [
-        "you can find safety details via clik on this link https://www.ceb.lk/commercial-safety/en"
-      ]
-    },
-    {
-      "tag": "Save_Electricity",
-      "patterns": [
-        "how i save electricity?",
-        "get details about save electricity"
-      ],
-      "responses": [
-        "you can find details about how to save electricity via clicking this link https://www.ceb.lk/save-electricity-commercial/en"
-      ]
-    },
-    {
-      "tag": "Electricity_Bill_Calculator",
-      "patterns": [
-        "how i calculate my electricity bill?",
-        "calculate my electricity bill",
-        "calculate my electricity bill?",
-        "Electricity Bill Calculator"
-      ],
-      "responses": [
-        "you can calculate your Electricity Bill via click on this link https://cebcare.ceb.lk/Incognito/BillCalculator"
-      ]
-    },
-    {
-      "tag": "get_electricity_connection",
-      "patterns": [
-        "how can i get new electricity connection?",
-        "details about get new electricity connection?",
-        "get new electricity connection"
-      ],
-      "responses": [
-        "you can find details about how get an electricity connection via clicking on this link https://www.ceb.lk/get-connection/en"
-      ]
-    },
-    {
-      "tag": "project",
-      "patterns": [
-        "can i get details about ceb projects?",
-        "ceb projects",
-        "trincomalee coal power project",
-        "seethawaka ganga hydropower project",
-        "liquefied natural gas power project",
-        "transmission construction project"
-      ],
-      "responses": [
-        "You can find details about CEB projects via clicking on this link https://www.ceb.lk/ceb-projects/en"
-      ]
-    },
-    {
-      "tag": "International_Standards",
-      "patterns": [
-        "can i get details about international standards in ceb",
-        "international standards",
-        "iso cerification in ceb"
-      ],
-      "responses": [
-        "you can find details about International Standards details about CEB via clicking on this link https://www.ceb.lk/international-standard/en"
-      ]
-    },
-    {
-      "tag": "generation_network",
-      "patterns": [
-        "can i get details about ceb generation network?",
-        "ceb generation network"
-      ],
-      "responses": [
-        "you can find CEB generation network via clicking on this link https://www.ceb.lk/generation-network/en"
-      ]
-    },
-    {
-      "tag": "transmission_network",
-      "patterns": [
-        "can i get details about transmission network in ceb?",
-        "transmission network in ceb",
-        "ceb transmission network"
-      ],
-      "responses": [
-        "You can get details about CEB transmission Network via clicking on this link https://www.ceb.lk/transmission/en"
-      ]
-    },
-    {
-      "tag": "llist_of_power_plants",
-      "patterns": [
-        "can i get list of power plants",
-        "get details about power plants",
-        "power plants details"
-      ],
-      "responses": [
-        "you can find LIST OF POWER STATIONS via clicking this link https://www.ceb.lk/power-plants-list/en"
-      ]
-    },
-    {
-      "tag": "Visit_a_Power_Plant",
-      "patterns": [
-        "How to Visit a Power Plant?",
-        "can i get details about Visit a Power Plant"
-      ],
-      "responses": [
-        "You can get details about HOW TO VISIT A POWER PLANT via clicking this link https://www.ceb.lk/visit-power-plant/en"
-      ]
-    },
-    {
-      "tag": "Finance_Manager",
-      "patterns": [
-        "who is finance maneger of ceb? finance maneger"
-      ],
-      "responses": [
-        "Finance manager of CEB is Mr. T K Liyanage."
+        "You may have the genetic foundation for developing diabetes, but it is not inevitable. Lifestyle and food management are crucial"
       ]
     }
   ]

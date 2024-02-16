@@ -1,0 +1,383 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi there",
+        "Hello",
+        "Hey",
+        "Good day"
+      ],
+      "responses": [
+        "Hello! Welcome to our diabetes support. How can I assist you today?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Goodbye",
+        "Bye",
+        "See you later",
+        "Take care"
+      ],
+      "responses": [
+        "Goodbye! Have a great day!",
+        "Farewell! Don't hesitate to return if you have more questions.",
+        "Take care and see you next time!",
+        "Goodbye! If you need further assistance, feel free to ask."
+      ]
+    },
+    {
+      "tag":"name",
+      "patterns": [
+        "what is your name",
+        "what should i call you",
+        "what's your name?",
+        "who are you?",
+        "can you tell me your name"],
+      "responses":[
+        "you can call me Medibot!",
+        "i am Medibot!"
+      ]
+     },
+     {
+      "tag": "diabetes",
+      "patterns": [
+        "What if diabetes?",
+        "diabetes is",
+        "diabetes"
+      ],
+      "responses": [
+      "Diabetes is a health condition where your body has trouble managing blood sugar levels. "  
+      ]
+    },
+
+
+    {
+      "tag": "symptoms",
+      "patterns": [
+        "What are the symptoms of diabetes?",
+        "How can I tell if I have diabetes?",
+        "What signs should I look for in diabetes?",
+        "I'm experiencing symptoms like increased thirst and frequent urination."
+
+      ],
+      "responses": [
+        "Common symptoms of diabetes include increased thirst, frequent urination, unexplained weight loss, fatigue, blurred vision, and slow wound healing. If you're experiencing these symptoms, it's important to consult a healthcare professional.",
+        "Symptoms of diabetes can include increased thirst, frequent urination, fatigue, unexplained weight loss, blurred vision, and slow wound healing. If you suspect you have diabetes, it's important to get tested and seek medical advice."
+      ]
+    },
+    {
+      "tag": "types",
+      "patterns": [
+        "What are the different types of diabetes?",
+        "Can you explain the types of diabetes?",
+        "How many types of diabetes are there?"
+      ],
+      "responses": [
+        "There are primarily three main types of diabetes: type 1 diabetes, type 2 diabetes, and gestational diabetes. Each type has its own causes, risk factors, and management strategies.",
+        "The main types of diabetes are type 1 diabetes, type 2 diabetes, and gestational diabetes. Type 1 is an autoimmune condition, type 2 is often related to lifestyle factors, and gestational diabetes occurs during pregnancy. Each type requires different management approaches."
+      ]
+    },
+    {
+      "tag": "diet",
+      "patterns": [
+        "What should I eat if I have diabetes?",
+        "Can you recommend a diabetic-friendly diet?",
+        "What foods should I avoid with diabetes?"
+      ],
+      "responses": [
+        "A balanced diet for diabetes includes plenty of vegetables, lean proteins, whole grains, and healthy fats. It's important to limit sugary foods and drinks, refined carbohydrates, and high-fat foods.",
+        "A diabetic-friendly diet focuses on portion control, whole foods, and balanced meals. It's important to monitor carbohydrate intake and choose foods with a low glycemic index."
+      ]
+    },
+    {
+      "tag": "risk_factors",
+      "patterns": [
+        "What are the risk factors for diabetes?",
+        "Am I at risk for diabetes?",
+        "What factors increase the risk of diabetes?"
+      ],
+      "responses": [
+        "Risk factors for diabetes include family history, overweight or obesity, physical inactivity, unhealthy diet, high blood pressure, high cholesterol levels, and ethnicity. It's important to be aware of these factors and take steps to reduce your risk.",
+        "Factors that increase the risk of diabetes include genetics, lifestyle factors (such as unhealthy diet and lack of exercise), obesity, high blood pressure, and high cholesterol levels. If you have these risk factors, it's important to talk to your doctor about prevention strategies."
+      ]
+    },
+    {
+      "tag": "prevention",
+      "patterns": [
+        "How can I prevent diabetes?",
+        "What are some ways to prevent diabetes?",
+        "Can diabetes be prevented?"
+      ],
+      "responses": [
+        "Lifestyle changes are the best way to prevent or delay the onset of type 2 diabetes. This includes reaching and maintaining a healthy body weight, staying physically active with at least 30 minutes of moderate exercise each day, eating a healthy diet low in sugar and saturated fat, and avoiding tobacco use."
+      ]
+    },
+    {
+      "tag": "diagnosis",
+      "patterns": [
+        "How is diabetes diagnosed?",
+        "What tests are used to diagnose diabetes?",
+        "Can you explain the diagnosis process for diabetes?"
+      ],
+      "responses": [
+        "Diabetes can be diagnosed through relatively inexpensive blood glucose testing. Early diagnosis is important to prevent complications. People with type 1 diabetes require insulin injections for survival, while those with type 2 diabetes may need medications along with lifestyle changes to manage their blood sugar levels."
+      ]
+    },
+    {
+      "tag": "treatment",
+      "patterns": [
+        "How is diabetes treated?",
+        "What are the treatment options for diabetes?",
+        "Can diabetes be managed without medication?"
+      ],
+      "responses": [
+        "Treatment for diabetes often involves a combination of healthy lifestyle habits, medication, and regular monitoring. People with type 1 diabetes require insulin injections for survival, while those with type 2 diabetes may need medications such as metformin, sulfonylureas, or sodium-glucose co-transporters type 2 inhibitors to help manage their blood sugar levels."
+      ]
+    },
+    {
+      "tag": "complications",
+      "patterns": [
+        "What are the complications of diabetes?",
+        "Can diabetes cause complications?",
+        "What problems can diabetes lead to?"
+      ],
+      "responses": [
+        "Diabetes can lead to various complications, including heart disease, stroke, kidney disease, nerve damage (neuropathy), eye problems (retinopathy), foot problems, and skin conditions. Proper management and control of blood sugar levels are essential to reduce the risk of complications.",
+        "Complications of diabetes can include heart disease, stroke, kidney disease, nerve damage, eye problems, foot problems, and skin conditions. It's important for people with diabetes to work closely with their healthcare team to prevent and manage these complications."
+      ]
+    },
+    {
+      "tag": "family_history",
+      "patterns": [
+        "If my father has type 2 diabetes, does that mean that I am more likely to get it also?",
+        "Does diabetes run in families?",
+        "Is diabetes hereditary?"
+      ],
+      "responses": [
+        "You may have the genetic foundation for developing diabetes, but it is not inevitable. Lifestyle and food management are crucial for maintaining good health. Stay active, eat unrefined foods, and manage stress levels to improve your chances of staying healthy."
+      ]
+    },
+    {
+      "tag": "blood_sugar_checking",
+      "patterns": [
+        "How many times a day should I take my blood sugar?",
+        "Is it necessary to check blood sugar levels multiple times a day?",
+        "How often should I check my blood glucose?"
+      ],
+      "responses": [
+        "Testing blood sugar levels 12 times a day might be excessive. Typically, 6 times a day can provide enough pre/post meal information. However, it's best to consult your physician for personalized advice. Morning and post-meal testing are generally recommended."
+      ]
+    },
+    {
+      "tag": "acidic_breath",
+      "patterns": [
+        "In the past three days, my husband’s breath has smelled strongly acidic. Is this related to his diabetes?",
+        "Can diabetes cause acidic breath?",
+        "Why does my husband's breath smell acidic?"
+      ],
+      "responses": [
+        "Strongly acidic breath could be related to elevated glucose levels, causing ketones to form. This can happen when the body breaks down fat rapidly for fuel. Consider testing for ketones and consult a physician if the issue persists."
+      ]
+    },
+    {
+      "tag": "prediabetes",
+      "patterns": [
+        "My 12-year-old daughter has been diagnosed with pre-diabetes. Is that always type 2?",
+        "Is pre-diabetes always type 2 diabetes?",
+        "Can pre-diabetes occur in children?"
+      ],
+      "responses": [
+        "Pre-diabetes doesn't always lead to type 2 diabetes. It's a condition where glucose levels are elevated but not high enough for a diabetes diagnosis. Lifestyle changes, including healthy eating habits and physical activity, are crucial for managing pre-diabetes."
+      ]
+    },
+    {
+      "tag": "type_diagnosis",
+      "patterns": [
+        "How do I find out whether I am type 1 or type 2 diabetic?",
+        "What tests determine if I have type 1 or type 2 diabetes?",
+        "How is the type of diabetes diagnosed?"
+      ],
+      "responses": [
+        "Tests can determine natural insulin production levels, helping diagnose type 1 diabetes where insulin is essential. Type 2 diabetes management often involves lifestyle changes, but insulin may be necessary for some individuals. Consult your physician for accurate diagnosis and personalized treatment."
+      ]
+    },
+    {
+      "tag": "heating_pads",
+      "patterns": [
+        "I read that people with diabetes should not use heating pads. Why not?",
+        "Why is it advised for people with diabetes to avoid heating pads?"
+      ],
+      "responses": [
+        "People with diabetes, especially those with neuropathy, should use heating pads cautiously. Neuropathy may reduce sensation, increasing the risk of burns if the pad gets too hot. It's essential to regulate temperature and avoid prolonged exposure to heat."
+      ]
+    },
+    {
+      "tag": "fasting_a1c_test",
+      "patterns": [
+        "Do I need to fast before having an A1C test?",
+        "Should I avoid eating before an A1C test?",
+        "Is fasting required for an A1C test?"
+      ],
+      "responses": [
+        "No, fasting isn't necessary for an A1C test. The test measures average blood glucose levels over three months, providing valuable insights into long-term glucose control."
+      ]
+    },
+    {
+      "tag": "tiredness_after_eating",
+      "patterns": [
+        "Is diabetes causing me to feel tired and sleepy after eating?",
+        "Why do I feel sleepy after meals if I have diabetes?",
+        "Can diabetes make me tired after eating?"
+      ],
+      "responses": [
+        "Elevated blood sugar levels can trigger the release of serotonin, inducing sleepiness. Carbohydrate-rich meals can exacerbate this effect. Prioritize whole foods and physical activity to manage blood sugar levels and improve alertness."
+      ]
+    },
+    {
+      "tag": "a1c_vs_fasting_readings",
+      "patterns": [
+        "Can my A1C be high if my fasting readings are lower than 130?",
+        "Why is my A1C high if my fasting blood sugar levels are normal?",
+        "Is it possible for A1C to be elevated despite normal fasting glucose levels?"
+      ],
+      "responses": [
+        "Yes, it's possible for A1C to be high even with normal fasting readings. Consider other factors like post-meal glucose levels and overall glucose control throughout the day. Tracking your levels and discussing with your physician can provide insights."
+      ]
+    },
+    {
+      "tag": "ketoacidosis",
+      "patterns": [
+        "What is ketoacidosis and what are the symptoms?",
+        "Can you explain ketoacidosis and its signs?",
+        "What are the symptoms of ketoacidosis?"
+      ],
+      "responses": [
+        "Ketoacidosis results from a buildup of ketones in the body due to rapid fat breakdown, potentially leading to life-threatening complications. Symptoms may include fruity breath, high blood sugar, excessive thirst, frequent urination, nausea, and vomiting. Seek medical attention if concerned."
+      ]
+    },
+    {
+      "tag": "fasting_before_test",
+      "patterns": [
+        "Why do I need to fast for 10 hours before a fasting glucose blood test?",
+        "Is fasting necessary before a fasting glucose test?",
+        "What's the purpose of fasting before a blood glucose test?"
+      ],
+      "responses": [
+        "Fasting allows your body to metabolize all food in the system, providing accurate fasting blood sugar levels. Different foods digest at various rates, so fasting ensures consistent results. A fasting blood sugar level of 126 or higher, repeated twice, indicates diabetes."
+      ]
+    },
+    {
+      "tag": "coffee_impact_on_test",
+      "patterns": [
+        "Does drinking black coffee impact a fasting test?",
+        "Can coffee affect fasting blood sugar tests?",
+        "Should I avoid coffee before a fasting blood test?"
+      ],
+      "responses": [
+        "Caffeine in coffee can temporarily affect blood sugar levels. To ensure accurate results, it's recommended to consume only water before fasting tests."
+      ]
+    },
+    {
+      "tag": "diabetes_signs",
+      "patterns": [
+        "How would I know if I am diabetic? What are the signs?",
+        "What are the symptoms of diabetes?",
+        "Can you list the signs of diabetes?"
+      ]
+    },
+    [
+      {
+        "tag": "diabetes_type_diagnosis",
+        "patterns": [
+          "Are there any other tests that could help diagnose the type of diabetes I have?"
+        ],
+        "responses": [
+          "If you were truly type 1, you would require insulin for survival. At the moment, you appear to be type 2, requiring insulin to help lower your numbers. Each bout of pancreatitis may be affecting the insulin-producing cells a bit more, resulting in a reduced ability of your body to produce sufficient insulin to keep your levels in a better range. At this time, your physician is probably trying to see if you stabilize at 200 or less and perhaps begin to lower on your own as your cells possibly start producing more insulin again. The C peptide test can give an indication of how much insulin your cells are producing. It does appear you need further discussions of this with your physician."
+        ]
+      },
+      {
+        "tag": "zombie_behavior",
+        "patterns": [
+          "How do I help my boyfriend who is diabetic and experiences zombie-like behavior?"
+        ],
+        "responses": [
+          "Erratic glucose levels can mimic bipolar behavior and potentially be harmful to you both. He is obviously experiencing high/low glucose level swings. He does need to take this seriously, see his physician assuming he has one, and follow with a diabetes eating/lifestyle plan. He should be testing his levels. He may need medication to help get his levels under control. Being a rebel is fine about some things, but not about a condition that can be life-threatening if left unmanaged. If he refuses to do anything to better control himself, you may have to take a tough love stand for your own well-being and possible protection."
+        ]
+      },
+      {
+        "tag": "blood_sugar_readings_affect_on_A1C",
+        "patterns": [
+          "Does having low blood sugar readings of 60 or 70 affect my A1C level?"
+        ],
+        "responses": [
+          "A1C is a 1.5 to three-month average of your glucose levels. It does not specify highs vs. lows. The goal of good control is not to have erratic swings in sugars, as this creates wear and tear on the neuropathic system. Being in the 70's is very normal (symptom-free) for many people and better overall than levels over 100. Just continue to follow a very healthy lifestyle with attention to eating unrefined foods as much as possible, as blood sugars are always subject to change over the life cycle."
+        ]
+      },
+      {
+        "tag": "drinking_water_before_blood_sugar_test",
+        "patterns": [
+          "Can I drink water during the two-hour period before testing my blood sugar?"
+        ],
+        "responses": [
+          "Of course! Water is a major nutrient, as we are composed of at least 60% water. It is calorie-free, so it will not raise your blood sugar. It is most important that you stay well hydrated, as elevated glucose can be most dehydrating, leading to headaches and dizziness. The textbook recommendation is to drink half your body weight in ounces of water throughout the day."
+        ]
+      },
+      {
+        "tag": "diabetic_use_of_hot_tub",
+        "patterns": [
+          "Can a diabetic use a hot tub?"
+        ],
+        "responses": [
+          "This has been a controversial issue for some time, but should really be treated on an individual basis. The first consideration is that the hot tub should be very clean, which would probably rule out many commercial tubs that accommodate lots of people in a day. Don't go in with any open sores, cuts, etc. Poor circulation in hands/feet may also be cause for avoidance if one has reduced ability to sense high heat. If your physician doesn't see an obstacle, start with a few minutes, working up to a maximum of about ten. Be mindful of chlorine which may be irritating."
+        ]
+      },
+      {
+        "tag": "special_toothpaste_for_diabetics",
+        "patterns": [
+          "Do people with diabetes need to use special toothpaste?"
+        ],
+        "responses": [
+          "Generally speaking, no, because you are not ingesting toothpaste. However, you do want to pay attention to the ingredients in things like cough syrup and other medications over the counter that may have sugar in them. Many products have sugar-free versions. Always ask your pharmacist when you aren't clear about the best product to buy for diabetes."
+        ]
+      },
+      {
+        "tag": "high_A1c_level",
+        "patterns": [
+          "Am I in huge trouble if my A1c level is 11?"
+        ],
+        "responses": [
+          "That is very high and needs to come down somewhat gradually so as not to experience feelings of low blood sugars. Taking charge of your food and lifestyle is the path to stay on. Insulin at this time may help to detoxify your beta cells, giving your pancreas a rest while you move into a more normal range. Be patient with yourself, but diligent. You didn't develop diabetes overnight; you may have been pre-diabetic for some time. The closer you get to a more normal weight, the better your chances for better control with less medication."
+        ]
+      },
+      {
+        "tag": "treating_cuts_and_injuries_with_diabetes",
+        "patterns": [
+          "Why are people with diabetes supposed to be so careful about treating cuts and other injuries?"
+        ],
+        "responses": [
+          "A person who has poorly controlled diabetes may find it takes longer to stop the bleeding or to heal the cut. This is the same caution for any wound, especially on the feet, which is why people with diabetes are encouraged to check feet daily for even a small splinter. If you maintain good levels that have been established with your physician, then healing times should be similar to anyone else who is basically healthy."
+        ]
+      },
+      {
+        "tag": "foot_odor_and_diabetes",
+        "patterns": [
+          "Can diabetes cause a person's feet to have a bad odor?"
+        ],
+        "responses": [
+          "Diabetes left unchecked may be involved in a foot infection, which can certainly cause an odor. Any buildup of bacteria or fungus can do the same. Be sure your feet are thoroughly washed with soap before bed, inspect your feet for any cuts, splinters, etc., and when wearing socks, they should be cotton. A yearly visit to a podiatrist is recommended for persons with diabetes. I suggest you at least pose this question to your physician."
+        ]
+      },
+      {
+        "tag": "hypoglycemia_and_diabetes",
+        "patterns": [
+          "Can the low blood sugar that I experience from time to time be a sign that I could be heading down the road to diabetes?"
+        ],
+        "responses": [
+          "Right now, it is most important that you learn to eat correctly for hypoglycemia (i.e., low blood sugar). This would mean to eat a small meal or snack every few hours. Food should be unrefined: no sugary starchy white stuff. Instead, eat lots of veggies, legumes, and fish if you eat it. A handful of dry-roasted nuts can curb a low"
+        ]
+      }
+    ]
+  ]
+}
