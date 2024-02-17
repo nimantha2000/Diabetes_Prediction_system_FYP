@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="static/icon.png" type="image/x-icon">
     <title>Diabetes Prediction System | FYP</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='chat.css') }}"> 
-    <link rel="stylesheet" href="{{ url_for('static', filename='footer.css') }}"> 
-     <link rel="stylesheet" href="{{ url_for('static', filename='tabs.css') }}"> 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='chat.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='tabs.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,700&display=swap" rel="stylesheet">
 
     <style>
         .btnPredict {
-            background-color: #4565db; /* Green */
+            background-color: #4565db;
+            /* Green */
             border: none;
             color: rgb(253, 250, 250);
             padding: 5px 10px;
@@ -23,128 +25,173 @@
         }
 
         .btnPredict:hover {
-            background-color:#173482;
+            background-color: #173482;
             color: rgb(253, 250, 250);
             transition: 0.7s;
         }
 
         .btnPredict:focus {
             outline-color: transparent;
-            outline-style:solid;
+            outline-style: solid;
             box-shadow: 0 0 0 4px #01152f;
         }
 
-    </style>
+        /* Modal style */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
 
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+    </style>
 </head>
+
 <body>
     <div class="layout">
-        <input name="nav" type="radio" class="nav home-radio" id="home" checked="checked" />
-        <div class="page home-page">
-          <div class="page-contents">
-              <center><h1>Diabetes Prediction System</h1></center>
-             
-              
-              <center><h2>Predict Diasbetes</h2></center><br>
-              
-              <form action="{{ url_for('predict_diabetes') }}" method="post">
-                  <center>
-                  <table > 
-                      <tr>
-                          <td style="height:100%;">
-                              <label for="glucose">Glucose  :</label>
-                          </td>
-                          <td>
-                              <input type="number" id="glucose" name="glucose" required>
-                          </td>
-                      </tr>
-                      <tr>
-                          <td>
-                              <label for="insulin">Insulin   :</label>
-                          </td>
-                          <td>
-                              <input type="number" id="insulin" name="insulin" required>
-                          </td>
-                      </tr>
-      
-                      <tr>
-                          <td>
-                              <label for="weight">Weight (kg) :</label>
-                          </td>
-                          <td>
-                              <input type="number" id="weight" name="weight" required>
-                          </td>
-                      </tr>
-                     
-                      <tr>
-                          <td>
-                              <label for="height">Height (cm) :</label>
-                          </td>
-                          <td>
-                              <input type="number" id="height" name="height" required>
-                          </td>
-                      </tr>
-      
-                      <tr>
-                          <td>
-                              <label for="age">Age :</label>
-                          </td>
-                          <td>
-                              <input type="number" id="age" name="age" required>
-                          </td>
-                      </tr>
-      
-                  </table> 
-                  </center><br>
-      
-                  <center><button type="submit" class="btnPredict">Predict</button> </center>
-              </form>
-      
-          </div>
-        </div>
-        <label class="nav" for="home">
-          <span>
-            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-            Home
-          </span>
-        </label>
-      
-        <input name="nav" type="radio" class="about-radio" id="about" />
-        <div class="page about-page">
-          <div class="page-contents">
-            <h2>Project Overview</h2>
-            <p>Diabetes is a chronic disease that affects millions of people worldwide. Early detection and management are crucial in preventing complications and improving quality of life for those affected. Our project addresses this challenge by leveraging machine learning techniques to predict the likelihood of an individual developing diabetes based on various factors such as Glucose, Insulin, BMI, and Age.</p>    
-            <h2>How it Works</h2>
-            <p>Our system utilizes a dataset containing health-related features of individuals, including both diabetic and non-diabetic cases. We have trained a machine learning model on this dataset, employing algorithms including logistic regression and SVM to accurately predict the probability of diabetes occurrence for a given set of input parameters.</p>
-            <center><a href="#">
-                <button>Click For more Details</button></a>
-            </center>
-        </div>
-        </div>
-        <label class="nav" for="about">
-          <span>
-          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12" y2="17"></line></svg>
-          About
-        </span>
-        </label>
-      
-        <input name="nav" type="radio" class="contact-radio" id="contact" />
-        <div class="page contact-page">
-          <div class="page-contents">
-            <h1>Admin Login</h1>
-            <button class="ubutton"><a href="{{ url_for('admin_login') }}">Admin Login</a></button>
-          </div>
-        </div>
-        <label class="nav" for="contact">
-          <span>
-          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-          Admin
-            </span>
-          
-        </label>
-      </div>
+        {% if agreement_confirmed %}
+            <input name="nav" type="radio" class="nav home-radio" id="home" checked="checked" />
+            <div class="page home-page">
+                <div class="page-contents">
+                    <center>
+                        <h1>Diabetes Prediction System</h1>
+                    </center>
 
-      
+
+                    <center>
+                        <h2>Predict Diasbetes</h2>
+                    </center><br>
+
+                    <form action="{{ url_for('predict_diabetes') }}" method="post">
+                        <center>
+                            <table>
+                                <tr>
+                                    <td style="height:100%;">
+                                        <label for="glucose">Glucose :</label>
+                                    </td>
+                                    <td>
+                                        <input type="number" id="glucose" name="glucose" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="insulin">Insulin :</label>
+                                    </td>
+                                    <td>
+                                        <input type="number" id="insulin" name="insulin" required>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <label for="weight">Weight (kg) :</label>
+                                    </td>
+                                    <td>
+                                        <input type="number" id="weight" name="weight" required>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <label for="height">Height (cm) :</label>
+                                    </td>
+                                    <td>
+                                        <input type="number" id="height" name="height" required>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <label for="age">Age :</label>
+                                    </td>
+                                    <td>
+                                        <input type="number" id="age" name="age" required>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </center><br>
+
+                        <center><button type="submit" class="btnPredict">Predict</button> </center>
+                    </form>
+
+                </div>
+                </div>
+                <label class="nav" for="home">
+                    <span>
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        Home
+                    </span>
+                </label>
+
+                <input name="nav" type="radio" class="about-radio" id="about" />
+                <div class="page about-page">
+                    <div class="page-contents">
+                        <h2>Project Overview</h2>
+                        <p>Diabetes is a chronic disease that affects millions of people worldwide. Early detection and
+                            management are crucial in preventing complications and improving quality of life for those affected.
+                            Our project addresses this challenge by leveraging machine learning techniques to predict the
+                            likelihood of an individual developing diabetes based on various factors such as Glucose, Insulin,
+                            BMI, and Age.</p>
+                        <h2>How it Works</h2>
+                        <p>Our system utilizes a dataset containing health-related features of individuals, including both
+                            diabetic and non-diabetic cases. We have trained a machine learning model on this dataset, employing
+                            algorithms including logistic regression and SVM to accurately predict the probability of diabetes
+                            occurrence for a given set of input parameters.</p>
+                        <center><a href="#">
+                                <button>Click For more Details</button></a>
+                        </center>
+                    </div>
+                </div>
+                <label class="nav" for="about">
+                    <span>
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12" y2="17"></line>
+                        </svg>
+                        About
+                    </span>
+                </label>
+
+                <input name="nav" type="radio" class="contact-radio" id="contact" />
+                <div class="page contact-page">
+                    <div class="page-contents">
+                        <h1>Admin Login</h1>
+                        <button class="ubutton"><a href="{{ url_for('admin_login') }}">Admin Login</a></button>
+                    </div>
+                </div>
+                <label class="nav" for="contact">
+                    <span>
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                            </path>
+                        </svg>
+                        Admin
+                    </span>
+
+                </label>
+        
+    </div>
 
 
     <footer class="new_footer_area bg_color">
@@ -242,14 +289,70 @@
                     </div>
                 </div>
                 <div class="chatbox__button">
-                    <button ><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
+                    <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
                 </div>
             </div>
         </div>
+
+        {% else %}
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <h2>System Agreement</h2>
+                    <p>Please read and agree to the terms and conditions before using the system.</p>
+                    <h3>Diabetes Prediction System Agreement</h3>
+                    <p> 
+                        This agreement is entered into between the user  and the Diabetes Prediction System . By
+                        using the System, the User agrees to the terms and conditions outlined below:
+                    </p>    
+                    <p>   
+                        <b>1.Accuracy of Predictions:</b>The predictions provided by the System are based on machine learning algorithms trained on
+                        historical data. While the System strives to provide accurate predictions, it is important to note that the predictions
+                        may not always be precise or reliable.
+                    </p>    
+                    <p>    
+                        <b>Data Collection and Privacy: </b> The User acknowledges that their input data, including personal health information, may be
+                        collected and stored by the System for the purpose of improving prediction accuracy and enhancing the System's
+                        functionality. The System will handle all user data in accordance with its privacy policy.
+                    </p>    
+                    <p>    
+                        <b>Modification of Agreement:</b>The System reserves the right to modify or update this Agreement at any time without prior
+                        notice. Users are encouraged to review this Agreement periodically for any changes.
+                    </p>    
+                    <p>   
+                        By using the Diabetes Prediction System, the User acknowledges that they have read, understood, and agreed to the terms
+                        and conditions of this Agreement.
+                    </p>
+                    <form action="/confirm" method="POST">
+                        <input type="checkbox" id="agreement" name="agreement" required>
+                        <label for="agreement">I agree to the terms and conditions</label><br><br>
+                        <button type="submit" class="btnPredict">Confirm</button>
+                    </form>
+                </div>
+            </div>
+        {% endif %}
         <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Display the modal when the page loads
+            window.onload = function () {
+                modal.style.display = "block";
+            };
+
+            // Close the modal if the user clicks outside of it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            };
+            
             $SCRIPT_ROOT = {{ request.script_root | tojson }};
+        
         </script>
         <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+
+       
     </footer>
 </body>
+
 </html>

@@ -27,6 +27,8 @@ app.config['SECRET_KEY'] = 'd4d5e6f7g8h9j0k'
 # Set up Flask-Login
 login_manager = LoginManager(app)
 
+agreement_confirmed = False
+
 # Example: a dictionary to store user information
 users = {
     'Nimantha': {'password': os.getenv('USER_NIMANTHA_PASSWORD')},
@@ -62,7 +64,31 @@ def load_user(user_id):
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    global agreement_confirmed
+    if agreement_confirmed:
+        # If agreement is confirmed, render the dashboard
+        return render_template('index.html', agreement_confirmed=True)
+    else:
+        # If agreement is not confirmed, render the confirmation form
+        return render_template('index.html', agreement_confirmed=False)
+
+# Route to handle confirmation form submission
+@app.route('/confirm', methods=['POST'])
+def confirm():
+    global agreement_confirmed
+    if request.method == 'POST':
+        agreement = request.form.get('agreement')
+        if agreement == 'on':  # The checkbox is checked
+            agreement_confirmed = True
+            # Redirect to the home page (dashboard)
+            return redirect(url_for('home'))
+    # If agreement is not confirmed or method is not POST, stay on the home page
+    return redirect(url_for('home'))
+
+# Dashboard route (index.html)
+@app.route('/dashboard')
+def dashboard():
+    return render_template('index.html')  # Render the dashboard template
 
 @app.route('/predict_diabetes', methods=['POST'])
 def predict_diabetes():
