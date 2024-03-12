@@ -124,6 +124,11 @@ def predict_diabetes():
         return render_template('result.html', prediction=prediction, model=model_used,
                                weight=weight, height=height, age=age,bmi=bmi,glucose=glucose,insulin=insulin)
 
+@app.route('/moreDetails', methods=['GET', 'POST'])
+def moreDetails():
+    return render_template('moreDetails.html')
+
+
 
 # Admin login route
 @app.route('/admin/login', methods=['GET', 'POST'])
