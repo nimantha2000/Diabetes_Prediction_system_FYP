@@ -10,10 +10,14 @@ import csv
 import subprocess
 import shutil
 import os
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from flask import Flask, render_template, request, jsonify
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from modules.chat import get_response
+
 
 from modules.calculate_bmi import calculate_bmi
 from modules.save_users_data_in_csv_file import save_to_csv
@@ -128,7 +132,36 @@ def predict_diabetes():
 def moreDetails():
     return render_template('moreDetails.html')
 
+@app.route('/submit_contact_form', methods=['POST'])
+def submit_contact_form():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        message = request.form['message']
 
+        # Compose email
+        subject = 'Contact Form Submission'
+        body = f'Name: {name}\nEmail: {email}\nMessage: {message}'
+
+        # Send email
+        send_email(subject, body)
+
+        return 'Thank you for your message. We will get back to you soon.'
+
+    return 'Failed to submit contact form. Please try again.'
+
+def send_email(subject, body):
+    # Add your email configuration
+    EMAIL_ADDRESS = 'sumekasu2320@gmail.com'
+    EMAIL_ADDRESS2 = 'nimanthakasun2000@gmail.com'
+    EMAIL_PASSWORD = 'nn0723522612nn'
+
+    msg = MIMEMultipart()
+    msg['From'] = EMAIL_ADDRESS
+    msg['To'] = EMAIL_ADDRESS2
+    msg['Subject'] = subject
+
+    msg.attach(MIMEText(body, 'plain'))
 
 # Admin login route
 @app.route('/admin/login', methods=['GET', 'POST'])
