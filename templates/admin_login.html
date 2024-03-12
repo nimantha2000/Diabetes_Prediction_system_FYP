@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="icon" href="static/icon.png" type="image/x-icon">
     <title>Admin Login</title>
@@ -9,6 +10,7 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='adminLogin.css') }}">
 </head>
+
 <body>
     <div class="background">
         <div class="shape"></div>
@@ -21,12 +23,13 @@
         <input type="text" placeholder="User name" id="username" name="username" required>
 
         <label for="password">Password</label>
-        <input type="password" placeholder="Password"id="password" name="password" required>
+        <input type="password" placeholder="Password" id="password" name="password" required>
         <br><br>
         <div class="g-recaptcha" data-sitekey="6Lc-vmwpAAAAAF7RIBETHmqSnRqwFbjXFAGumRCZ"></div>
 
         <button>Log In</button>
-        
+
     </form>
 </body>
+
 </html>

@@ -1,5 +1,5 @@
 # Importing essential libraries
-from flask import flash, Flask, render_template, request, redirect, url_for
+from flask import flash, Flask, render_template, request, redirect, url_for, jsonify
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from user import User  
 import pickle
@@ -13,7 +13,6 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from flask import Flask, render_template, request, jsonify
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from modules.chat import get_response
@@ -154,7 +153,7 @@ def send_email(subject, body):
     # Add your email configuration
     EMAIL_ADDRESS = 'sumekasu2320@gmail.com'
     EMAIL_ADDRESS2 = 'nimanthakasun2000@gmail.com'
-    EMAIL_PASSWORD = 'nn0723522612nn'
+    EMAIL_PASSWORD = 'nn07235226d12nn'
 
     msg = MIMEMultipart()
     msg['From'] = EMAIL_ADDRESS

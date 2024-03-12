@@ -7,7 +7,7 @@ import torch
 from fuzzywuzzy import fuzz
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
-import pandas as pd  # Add this import for working with CSV files
+import pandas as pd  
 
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize

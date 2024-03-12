@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='adminDashboard.css') }}">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -49,11 +49,13 @@
             </div>
 
             <div class="search-box">
-                <center><b><p>Hi {{ username }}, Welcome to the Admin Dashboard</b></p></center>
+                <center><b>
+                        <p>Hi {{ username }}, Welcome to the Admin Dashboard
+                    </b></p>
+                </center>
             </div>
 
             <div class="profile-details">
-                <!-- <img src="#" alt=""> -->
                 <span class="admin_name">User: {{ username }}</span>
                 <i class='bx bx-chevron-down'></i>
             </div>
@@ -64,28 +66,26 @@
             <div class="overview-boxes">
                 <div class="box">
                     <div class="right-side">
-                        <center><div class="box-topic">Accuracy of SVM Model</div></center>
-                        <center><div class="number">{{ accuracy_svm }}</div></center>
-                        <!-- <div class="indicator">
-                        <i class='bx bx-up-arrow-alt'></i>
-                        <span class="text">Up from yesterday</span>
-                        </div> -->
+                        <center>
+                            <div class="box-topic">Accuracy of SVM Model</div>
+                        </center>
+                        <center>
+                            <div class="number">{{ accuracy_svm }}</div>
+                        </center>
                     </div>
-                    <!-- <i class='bx bx-cart-alt cart'></i> -->
                 </div>
 
                 <div class="box">
                     <div class="right-side">
-                        <center><div class="box-topic">Accuracy of Logistic Regression Model</div></center>
-                        <center><div class="number">{{ accuracy_logreg }}</div> </center>
-                        <!-- <div class="indicator">
-                        <i class='bx bx-up-arrow-alt'></i>
-                        <span class="text">Up from yesterday</span>
-                        </div> -->
+                        <center>
+                            <div class="box-topic">Accuracy of Logistic Regression Model</div>
+                        </center>
+                        <center>
+                            <div class="number">{{ accuracy_logreg }}</div>
+                        </center>
                     </div>
-                    <!-- <i class='bx bx-cart-alt cart'></i> -->
                 </div>
-                
+
 
             </div>
 
