@@ -98,9 +98,13 @@
                             </tr>
 
                         </table>
-                    </center><br>
+                        <br>
 
-                    <center><button type="submit" class="btnPredict">Predict</button> </center>
+                        
+                        <button type="submit" class="btnPredict">Predict</button> <br><br>
+                        <input type="reset" value="Reset" class="resetbutton">
+
+                    </center>
                 </form>
 
             </div>
@@ -131,7 +135,7 @@
                     algorithms including logistic regression and SVM to accurately predict the probability of diabetes
                     occurrence for a given set of input parameters.</p>
                 <center>
-                    <button class="ubutton"><a href="{{ url_for('moreDetails') }}">Click For more Details</a></button>
+                    <button class="resetbutton"><a href="{{ url_for('moreDetails') }}">Click For more Details</a></button>
                 </center>
             </div>
         </div>
@@ -151,7 +155,7 @@
         <div class="page contact-page">
             <div class="page-contents">
                 <h1>Admin Login</h1>
-                <button class="ubutton"><a href="{{ url_for('admin_login') }}">Admin Login</a></button>
+                <button class="resetbutton"><a href="{{ url_for('admin_login') }}">Admin Login</a></button>
             </div>
         </div>
         <label class="nav" for="contact">
