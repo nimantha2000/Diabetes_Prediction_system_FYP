@@ -105,7 +105,7 @@ def predict_diabetes():
         # Calculate BMI
         bmi = calculate_bmi(weight, height)
 
-        latest_svm_accuracy, latest_logreg_accuracy = get_latest_model_accuracies()
+        latest_svm_accuracy, latest_logreg_accuracy,model_of_use = get_latest_model_accuracies()
 
         if latest_svm_accuracy >= latest_logreg_accuracy:
             # Prediction using SVM model
@@ -198,10 +198,10 @@ def admin_dashboard():
 
     # Limit the data to the first 10 rows
     limited_data = data[:]
+    
+    latest_svm_accuracy, latest_logreg_accuracy,model_of_use = get_latest_model_accuracies()
 
-    latest_svm_accuracy, latest_logreg_accuracy = get_latest_model_accuracies()
-
-    return render_template('admin_dashboard.html', data=limited_data, accuracy_svm=latest_svm_accuracy, accuracy_logreg=latest_logreg_accuracy, username=current_user.get_id())
+    return render_template('admin_dashboard.html', data=limited_data, accuracy_svm=latest_svm_accuracy, accuracy_logreg=latest_logreg_accuracy, username=current_user.get_id(), model_of_use=model_of_use)
 
 # Logout route
 @app.route('/admin/logout')

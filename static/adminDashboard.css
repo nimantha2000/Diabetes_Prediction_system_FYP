@@ -206,6 +206,14 @@ nav .profile-details i{
   margin-top: -6px;
   font-weight: 500;
 }
+
+.home-content .box .text{
+  display: inline-block;
+  color: #e05260;
+  font-size: 25px;
+  margin-top: -6px;
+  font-weight: 500;
+}
 .home-content .box .indicator{
   display: flex;
   align-items: center;

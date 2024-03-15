@@ -14,10 +14,14 @@ def get_latest_model_accuracies():
         # Get the latest accuracies for SVM and Logistic Regression models
         latest_svm_accuracy = svm_data['Accuracy'].iloc[-1] if not svm_data.empty else 'N/A'
         latest_logreg_accuracy = logreg_data['Accuracy'].iloc[-1] if not logreg_data.empty else 'N/A'
+        if latest_svm_accuracy>latest_logreg_accuracy:
+            model_of_use="SVM"
+        else:
+            model_of_use="Logistic Regression" 
 
     except FileNotFoundError:
         # Handle if the file doesn't exist or any other exception
         latest_svm_accuracy = 'N/A'
         latest_logreg_accuracy = 'N/A'
 
-    return latest_svm_accuracy, latest_logreg_accuracy
+    return latest_svm_accuracy, latest_logreg_accuracy,model_of_use
