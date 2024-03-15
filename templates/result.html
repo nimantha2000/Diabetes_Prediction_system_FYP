@@ -5,13 +5,16 @@
     <meta charset="utf-8">
     <title>Diabetes Predictor</title>
     <link rel="icon" href="static/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
-    
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='chat.css') }}">
+
         
 </head>
 
 <body>
     <!-- Result -->
+    <center>
     <div class="results">
         {% if prediction == 1 %}
             <h1>Prediction: <span class='danger'>Oops! You have DIABETES.</span></h1>
@@ -19,7 +22,7 @@
             <h1>Prediction: <span class='safe'>Wow! You DON'T have diabetes.</span></h1>
         {% endif %}
         
-        <center>
+        
         <table class="table table-bordered mt-3">
             <tr>
                 <td class="data-label">Input Data:</td>
@@ -50,9 +53,70 @@
         {% elif prediction == 0 %}
             <img src="{{ url_for('static', filename='no-diabetes.webp') }}" alt="Not Diabetes Image" width="200" height="200"><br><br>
         {% endif %}
-    </center>
+    
     </div>
+    <br>
+    <button class="backbutton" ><a href="{{ url_for('home') }}">Back to Home</a></button><br><br>
 
-    <button class="button" ><a href="{{ url_for('home') }}">Back to Home</a></button>
+</center>
+
+    <footer class="new_footer_area bg_color">
+        <div class="new_footer_top">
+            <div class="container">
+                <div class="row">
+                    
+                </div>
+            </div>
+            <div class="footer_bg">
+                <div class="footer_bg_one"></div>
+                <div class="footer_bg_two"></div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-sm-7">
+                        <p class="mb-0 f_400">© SLTC 2024 All rights reserved.</p>
+                    </div>
+                    <div class="col-lg-6 col-sm-5 text-right">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="chatbox">
+                <div class="chatbox__support">
+                    <div class="chatbox__header">
+                        <div class="chatbox__image--header">
+                            <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png"
+                                alt="image">
+                        </div>
+                        <div class="chatbox__content--header">
+                            <h4 class="chatbox__heading--header">Diabetes Health Assistance</h4>
+                            <p class="chatbox__description--header">Hi. How can I help you?</p>
+                        </div>
+                    </div>
+                    <div class="chatbox__messages">
+                        <!-- Messages will be displayed here -->
+                    </div>
+                    <div class="chatbox__footer">
+                        <input type="text" placeholder="Write a message...">
+                        <button class="chatbox__send--footer send__button">Send</button>
+                    </div>
+                </div>
+                <div class="chatbox__button">
+                    <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $SCRIPT_ROOT = {{ request.script_root | tojson }};
+        </script>
+        <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+
+    </footer>
+
 </body>
 </html>
