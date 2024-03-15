@@ -13,45 +13,42 @@
 </head>
 
 <body>
-    <!-- Result -->
+    
     <center>
+    <h1>Result </h1>
     <div class="results">
-        {% if prediction == 1 %}
-            <h1>Prediction: <span class='danger'>Oops! You have DIABETES.</span></h1>
-        {% elif prediction == 0 %}
-            <h1>Prediction: <span class='safe'>Wow! You DON'T have diabetes.</span></h1>
-        {% endif %}
         
         
-        <table class="table table-bordered mt-3">
+        <h3>Inputed Data:</h3>
+        <table class="container">
             <tr>
-                <td class="data-label">Input Data:</td>
-            </tr>
-            <tr>
-                <td class="data-label">Glucose:</td>
+                <td >Glucose:</td>
                 <td>{{ glucose }}</td>
             </tr>
             <tr>
-                <td class="data-label">Insulin:</td>
+                <td >Insulin:</td>
                 <td>{{ insulin }}</td>
             </tr>
             <tr>
-                <td class="data-label">BMI:</td>
+                <td >Calculated BMI:</td>
                 <td>{{ bmi }}</td>
             </tr>
             <tr>
-                <td class="data-label">Age:</td>
+                <td >Age:</td>
                 <td>{{ age }}</td>
             </tr>
         </table>
-      
-
-        <br><br>
 
         {% if prediction == 1 %}
             <img class="gif" src="{{ url_for('static', filename='diabetes.webp') }}" alt="Diabetes Image">
         {% elif prediction == 0 %}
             <img src="{{ url_for('static', filename='no-diabetes.webp') }}" alt="Not Diabetes Image" width="200" height="200"><br><br>
+        {% endif %}
+
+        {% if prediction == 1 %}
+            <h1>Prediction: <span class='danger'>Oops! You have DIABETES.</span></h1>
+        {% elif prediction == 0 %}
+            <h1>Prediction: <span class='safe'>Wow! You DON'T have diabetes.</span></h1>
         {% endif %}
     
     </div>
