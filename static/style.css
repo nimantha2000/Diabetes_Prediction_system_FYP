@@ -332,3 +332,9 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 0 0 4px #84d2a0;
 }
 
+::placeholder {
+  color: rgb(176, 169, 173);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
