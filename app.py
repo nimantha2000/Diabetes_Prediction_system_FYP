@@ -320,7 +320,5 @@ def predict():
         app.logger.exception("An error occurred during request processing: %s", str(e))
         return jsonify({"error": "Internal Server Error"}), 500
 
-
-
 if __name__ == '__main__':
     app.run(debug=True)
