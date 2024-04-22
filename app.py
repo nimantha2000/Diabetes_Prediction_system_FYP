@@ -127,9 +127,9 @@ def predict_diabetes():
         return render_template('result.html', prediction=prediction, model=model_used,
                                weight=weight, height=height, age=age,bmi=bmi,glucose=glucose,insulin=insulin)
 
-@app.route('/moreDetails', methods=['GET', 'POST'])
-def moreDetails():
-    return render_template('moreDetails.html')
+@app.route('/contactUs', methods=['GET', 'POST'])
+def contactUs():
+    return render_template('contactUs.html')
 
 @app.route('/submit_contact_form', methods=['POST'])
 def submit_contact_form():

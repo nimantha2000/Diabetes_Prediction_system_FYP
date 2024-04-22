@@ -37,12 +37,16 @@
         <p>If you have any types of quries related to this application, you can send me message from
           here.</p>
 
-        <form action="/submit_contact_form" method="POST">
+        <form
+          action="https://formspree.io/f/mpzvykwy"
+          method="POST"
+        >
+
           <div class="input-box">
-            <input type="text" name="name" placeholder="Enter your name">
+            <input type="text" name="name" placeholder="Enter your name" required>
           </div>
           <div class="input-box">
-            <input type="email" name="email" placeholder="Enter your email">
+            <input type="email" name="email" placeholder="Enter your email" required>
           </div>
           <div class="input-box">
             <textarea name="message" id="subject" placeholder="Write something.." style="height:150px"></textarea>

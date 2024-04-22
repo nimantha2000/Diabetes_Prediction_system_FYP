@@ -7,12 +7,13 @@ import torch
 from fuzzywuzzy import fuzz
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
-import pandas as pd  
+import pandas as pd  # Add this import for working with CSV files
 
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
 
 with open('intents.json', 'r') as json_data:
     intents = json.load(json_data)
@@ -115,7 +116,7 @@ def get_response(msg):
     # If no response was found in intents or cache, log the unanswered question
     log_unanswered_question(msg)
     
-    return "Sorry, I don't know answer for your quection"
+    return "I couldn't find an answer to your question. Please contact the hotline via 1987."
 
 if __name__ == "__main__":
     print("Let's chat! (type 'quit' to exit)")
