@@ -1,3 +1,4 @@
+
 /* CHATBOX
 =============== */
 .chatbox {
@@ -98,7 +99,7 @@
 }
 
 .chatbox__image--header {
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .chatbox__heading--header {
@@ -152,6 +153,7 @@
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   margin-top: 20px;
+  background: #74e4e4;
 }
 
 .chatbox__footer input {
@@ -248,7 +250,3 @@
 .left {
   text-align: left;
 }
-
-
-
-
