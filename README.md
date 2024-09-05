@@ -38,7 +38,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Credits
 - [NimanthaKausn](https://github.com/nimantha2000) - Lead Developer
-- [Contributor Name](https://github.com/contributor) - Contributor
 
 ## Acknowledgments
 - Dataset source: [Kagle]
